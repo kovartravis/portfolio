@@ -31,13 +31,12 @@ export const Experience: React.FC = () => {
 
         {/* Experience Timeline */}
         <div className="space-y-8">
-          {EXPERIENCES.map((exp, idx) => {
+          {EXPERIENCES.map((exp) => {
             const isStJude = exp.id === 'st-jude';
 
             return (
-              <Reveal
+              <div
                 key={exp.id}
-                delay={idx * 80}
                 className="rounded-3xl border border-stone-200 bg-white shadow-xs hover:shadow-md transition-all duration-300 overflow-hidden"
               >
                 {/* Header Banner */}
@@ -133,7 +132,7 @@ export const Experience: React.FC = () => {
                   </div>
                 </div>
 
-              </Reveal>
+              </div>
             );
           })}
         </div>

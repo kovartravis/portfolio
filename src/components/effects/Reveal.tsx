@@ -18,26 +18,42 @@ export const Reveal: React.FC<RevealProps> = ({
     const el = ref.current;
     if (!el) return;
 
-    // If already in view on load
+    // Immediately trigger if anywhere near the viewport on mount
     const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
+    if (rect.top < window.innerHeight * 1.8) {
       setIsVisible(true);
       return;
     }
 
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.disconnect();
+            window.removeEventListener('scroll', onScroll);
+          }
         }
       },
-      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+      { rootMargin: '300px 0px', threshold: 0 }
     );
 
-    observer.observe(el);
+    const onScroll = () => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight + 300) {
+        setIsVisible(true);
+        observer.disconnect();
+        window.removeEventListener('scroll', onScroll);
+      }
+    };
 
-    return () => observer.disconnect();
+    observer.observe(el);
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', onScroll);
+    };
   }, []);
 
   return (
@@ -45,13 +61,12 @@ export const Reveal: React.FC<RevealProps> = ({
       ref={ref}
       style={{
         transitionProperty: 'opacity, transform',
-        transitionDuration: '650ms',
+        transitionDuration: '600ms',
         transitionDelay: `${delay}ms`,
         transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
-        willChange: isVisible ? 'auto' : 'opacity, transform',
       }}
       className={`transform-gpu ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6 pointer-events-none'
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
       } ${className}`}
     >
       {children}

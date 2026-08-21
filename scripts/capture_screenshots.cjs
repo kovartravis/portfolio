@@ -26,12 +26,34 @@ async function run() {
   });
   console.log('Saved 01_desktop_hero.png');
 
+  // Scroll down smoothly to reveal all sections
+  await page.evaluate(async () => {
+    await new Promise((resolve) => {
+      let totalHeight = 0;
+      const distance = 300;
+      const timer = setInterval(() => {
+        const scrollHeight = document.body.scrollHeight;
+        window.scrollBy(0, distance);
+        totalHeight += distance;
+        if (totalHeight >= scrollHeight) {
+          clearInterval(timer);
+          resolve();
+        }
+      }, 30);
+    });
+  });
+  await page.waitForTimeout(600);
+
   // 1b. Desktop Full Page
   await page.screenshot({
     path: path.join(screenshotsDir, '02_desktop_fullpage.png'),
     fullPage: true,
   });
   console.log('Saved 02_desktop_fullpage.png');
+
+  // Scroll back to top
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.waitForTimeout(300);
 
   // 1c. Interact with Terminal Demo (Click "2. Search Agent Memory")
   const searchBtn = page.locator('button:has-text("2. Search Agent Memory")');
@@ -87,6 +109,25 @@ async function run() {
     fullPage: false,
   });
   console.log('Saved 05_mobile_hero.png');
+
+  // Scroll down smoothly on mobile
+  await mobilePage.evaluate(async () => {
+    await new Promise((resolve) => {
+      let totalHeight = 0;
+      const distance = 400;
+      const timer = setInterval(() => {
+        const scrollHeight = document.body.scrollHeight;
+        window.scrollBy(0, distance);
+        totalHeight += distance;
+        if (totalHeight >= scrollHeight) {
+          clearInterval(timer);
+          window.scrollTo(0, 0);
+          resolve();
+        }
+      }, 40);
+    });
+  });
+  await mobilePage.waitForTimeout(400);
 
   await mobilePage.screenshot({
     path: path.join(screenshotsDir, '06_mobile_fullpage.png'),

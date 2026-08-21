@@ -83,6 +83,18 @@
     box-shadow: none !important;
     border: none !important;
   }
+  .transform-gpu {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .transform-gpu {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }
 
 @keyframes border-beam {
