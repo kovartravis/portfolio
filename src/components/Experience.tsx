@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'motion/react';
 import { EXPERIENCES } from '../data/resumeData';
 import { 
   Briefcase, 
@@ -10,6 +9,7 @@ import {
   TrendingUp 
 } from 'lucide-react';
 import { SpotlightCard } from './effects/SpotlightCard';
+import { Reveal } from './effects/Reveal';
 
 export const Experience: React.FC = () => {
   return (
@@ -17,14 +17,7 @@ export const Experience: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-40px' }}
-          transition={{ duration: 0.45 }}
-          style={{ transform: 'translate3d(0, 0, 0)', backfaceVisibility: 'hidden' }}
-          className="text-center max-w-2xl mx-auto mb-16"
-        >
+        <Reveal className="text-center max-w-2xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-bold uppercase tracking-wider mb-3">
             <Briefcase className="w-3.5 h-3.5" /> Work Experience & Systems Built
           </div>
@@ -34,7 +27,7 @@ export const Experience: React.FC = () => {
           <p className="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed text-pretty">
             From zero-to-one greenfield platforms and autonomous AI agents to enterprise modernization and informal engineering leadership.
           </p>
-        </motion.div>
+        </Reveal>
 
         {/* Experience Timeline */}
         <div className="space-y-10">
@@ -42,13 +35,9 @@ export const Experience: React.FC = () => {
             const isStJude = exp.id === 'st-jude';
 
             return (
-              <motion.div
+              <Reveal
                 key={exp.id}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.45, delay: idx * 0.08 }}
-                style={{ transform: 'translate3d(0, 0, 0)', backfaceVisibility: 'hidden' }}
+                delay={idx * 80}
                 className="rounded-3xl border border-stone-200 bg-white shadow-xs hover:shadow-md transition-all duration-300 overflow-hidden"
               >
                 {/* Header Banner */}
@@ -144,7 +133,7 @@ export const Experience: React.FC = () => {
                   </div>
                 </div>
 
-              </motion.div>
+              </Reveal>
             );
           })}
         </div>

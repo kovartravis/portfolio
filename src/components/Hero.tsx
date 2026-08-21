@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
+import { PERSONAL_INFO } from '../data/resumeData';
 import { 
   Sparkles, 
   Terminal as TerminalIcon, 
@@ -13,9 +13,9 @@ import {
   Code2, 
   Zap 
 } from 'lucide-react';
-import { PERSONAL_INFO } from '../data/resumeData';
 import { TerminalDemo } from './TerminalDemo';
 import { GithubIcon } from './Icons';
+import { Reveal } from './effects/Reveal';
 
 interface HeroProps {
   onOpenResumeModal: () => void;
@@ -43,13 +43,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResumeModal }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
           
           {/* Left Column: Staff Positioning & Thesis */}
-          <motion.div 
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            style={{ transform: 'translate3d(0, 0, 0)', backfaceVisibility: 'hidden' }}
-            className="lg:col-span-6 space-y-7 text-left"
-          >
+          <Reveal className="lg:col-span-6 space-y-7 text-left">
             {/* Status Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-stone-200/90 shadow-xs max-w-full">
               <span className="relative flex h-2 w-2 shrink-0">
@@ -174,16 +168,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResumeModal }) => {
                 <span>github.com/kovartravis</span>
               </a>
             </div>
-          </motion.div>
+          </Reveal>
 
           {/* Right Column: Live Interactive Neuron Terminal Demo */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98, y: 15 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            style={{ transform: 'translate3d(0, 0, 0)', backfaceVisibility: 'hidden' }}
-            className="lg:col-span-6"
-          >
+          <Reveal delay={120} className="lg:col-span-6">
             <div className="relative">
               {/* Highlight badge above terminal */}
               <div className="flex items-center justify-between mb-2.5 px-1">
@@ -200,7 +188,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResumeModal }) => {
                 Interactive preview of <span className="text-slate-900 font-semibold">Neuron</span> — persistent schema-enforced memory for coding agents.
               </div>
             </div>
-          </motion.div>
+          </Reveal>
 
         </div>
       </div>

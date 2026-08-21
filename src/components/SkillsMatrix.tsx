@@ -11,6 +11,7 @@ import {
   Code 
 } from 'lucide-react';
 import { SpotlightCard } from './effects/SpotlightCard';
+import { Reveal } from './effects/Reveal';
 
 const CATEGORY_ICONS: Record<string, React.ElementType> = {
   'AI & ML Systems': Cpu,
@@ -46,14 +47,7 @@ export const SkillsMatrix: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-40px' }}
-          transition={{ duration: 0.45 }}
-          style={{ transform: 'translate3d(0, 0, 0)', backfaceVisibility: 'hidden' }}
-          className="text-center max-w-2xl mx-auto mb-14"
-        >
+        <Reveal className="text-center max-w-2xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-bold uppercase tracking-wider mb-3">
             <Cpu className="w-3.5 h-3.5" /> Technical Expertise & Stack
           </div>
@@ -63,7 +57,7 @@ export const SkillsMatrix: React.FC = () => {
           <p className="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed text-pretty">
             Every skill backed by real production workload experience and measured business impact.
           </p>
-        </motion.div>
+        </Reveal>
 
         {/* Filters & Search */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-12">

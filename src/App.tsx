@@ -19,9 +19,21 @@ export const App: React.FC = () => {
       {/* Interactive Neural Mesh Canvas Background */}
       <NeuralBackground />
 
-      {/* Ambient background glow orbs */}
-      <div className="fixed top-0 left-1/4 w-[600px] h-[600px] bg-gradient-to-br from-cyan-200/20 via-indigo-200/15 to-transparent rounded-full blur-3xl pointer-events-none -z-10 animate-pulse-subtle" />
-      <div className="fixed bottom-1/4 right-10 w-[500px] h-[500px] bg-gradient-to-tr from-amber-200/15 via-rose-200/10 to-transparent rounded-full blur-3xl pointer-events-none -z-10 animate-pulse-subtle" style={{ animationDelay: '-2s' }} />
+      {/* Ambient background glow orbs without expensive blur filters */}
+      <div
+        className="fixed top-0 left-1/4 w-[700px] h-[700px] pointer-events-none -z-10"
+        style={{
+          background: 'radial-gradient(circle at center, rgba(6, 182, 212, 0.09) 0%, rgba(99, 102, 241, 0.05) 45%, transparent 70%)',
+          transform: 'translate3d(0, 0, 0)',
+        }}
+      />
+      <div
+        className="fixed bottom-1/4 right-10 w-[600px] h-[600px] pointer-events-none -z-10"
+        style={{
+          background: 'radial-gradient(circle at center, rgba(245, 158, 11, 0.06) 0%, rgba(244, 63, 94, 0.04) 45%, transparent 70%)',
+          transform: 'translate3d(0, 0, 0)',
+        }}
+      />
 
       {/* Sticky Navigation Bar */}
       <Navbar onOpenResumeModal={() => setResumeModalOpen(true)} />

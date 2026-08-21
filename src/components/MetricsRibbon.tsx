@@ -1,9 +1,9 @@
 import React from 'react';
-import { motion } from 'motion/react';
 import { KEY_METRICS } from '../data/resumeData';
 import { TrendingUp, Users, Cpu, FileCheck, Clock, Download } from 'lucide-react';
 import { SpotlightCard } from './effects/SpotlightCard';
 import { AnimatedCounter } from './effects/AnimatedCounter';
+import { Reveal } from './effects/Reveal';
 
 const ICONS = [FileCheck, Clock, TrendingUp, Download, Users, Cpu];
 
@@ -11,34 +11,20 @@ export const MetricsRibbon: React.FC = () => {
   return (
     <section className="py-20 sm:py-24 bg-stone-100/60 border-y border-stone-200/80 relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-40px' }}
-          transition={{ duration: 0.45 }}
-          style={{ transform: 'translate3d(0, 0, 0)', backfaceVisibility: 'hidden' }}
-          className="text-center max-w-2xl mx-auto mb-14"
-        >
+        <Reveal className="text-center max-w-2xl mx-auto mb-14">
           <h2 className="text-xs font-bold uppercase tracking-widest text-cyan-800 mb-2">
             Production Track Record & Engineering Impact
           </h2>
           <p className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight text-balance">
             Measured outcomes across AI, systems, and leadership
           </p>
-        </motion.div>
+        </Reveal>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {KEY_METRICS.map((metric, idx) => {
             const Icon = ICONS[idx % ICONS.length];
             return (
-              <motion.div
-                key={metric.label}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-30px' }}
-                transition={{ duration: 0.45, delay: idx * 0.06 }}
-                style={{ transform: 'translate3d(0, 0, 0)', backfaceVisibility: 'hidden' }}
-              >
+              <Reveal key={metric.label} delay={idx * 60}>
                 <SpotlightCard
                   spotlightColor="rgba(6, 182, 212, 0.12)"
                   className="group h-full p-7 sm:p-8 rounded-2xl bg-white border border-stone-200/90 hover:border-stone-300 transition-all duration-300 hover:-translate-y-1 shadow-xs hover:shadow-md cursor-default"
@@ -61,7 +47,7 @@ export const MetricsRibbon: React.FC = () => {
                     </p>
                   </div>
                 </SpotlightCard>
-              </motion.div>
+              </Reveal>
             );
           })}
         </div>

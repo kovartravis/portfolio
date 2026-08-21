@@ -1,8 +1,8 @@
 import React from 'react';
-import { motion } from 'motion/react';
 import { EDUCATION_AND_CERTS } from '../data/resumeData';
 import { GraduationCap, Award, CheckCircle2, ShieldCheck, ExternalLink } from 'lucide-react';
 import { SpotlightCard } from './effects/SpotlightCard';
+import { Reveal } from './effects/Reveal';
 
 export const EducationCertifications: React.FC = () => {
   return (
@@ -10,32 +10,19 @@ export const EducationCertifications: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-40px' }}
-          transition={{ duration: 0.45 }}
-          style={{ transform: 'translate3d(0, 0, 0)', backfaceVisibility: 'hidden' }}
-          className="text-center max-w-2xl mx-auto mb-16"
-        >
+        <Reveal className="text-center max-w-2xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-bold uppercase tracking-wider mb-3">
             <Award className="w-3.5 h-3.5" /> Education & Credentials
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight text-balance">
             Academic Background & Certifications
           </h2>
-        </motion.div>
+        </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           
           {/* Degree Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-40px' }}
-            transition={{ duration: 0.45 }}
-            style={{ transform: 'translate3d(0, 0, 0)', backfaceVisibility: 'hidden' }}
-          >
+          <Reveal delay={0}>
             <SpotlightCard
               spotlightColor="rgba(6, 182, 212, 0.1)"
               className="h-full p-7 sm:p-9 rounded-3xl bg-white border border-stone-200 shadow-xs hover:shadow-md transition-all flex flex-col justify-between cursor-default"
@@ -73,16 +60,10 @@ export const EducationCertifications: React.FC = () => {
                 ))}
               </div>
             </SpotlightCard>
-          </motion.div>
+          </Reveal>
 
           {/* AWS AI Certification Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-40px' }}
-            transition={{ duration: 0.45, delay: 0.08 }}
-            style={{ transform: 'translate3d(0, 0, 0)', backfaceVisibility: 'hidden' }}
-          >
+          <Reveal delay={80}>
             <SpotlightCard
               spotlightColor="rgba(99, 102, 241, 0.1)"
               className="h-full p-7 sm:p-9 rounded-3xl bg-white border border-stone-200 shadow-xs hover:shadow-md transition-all flex flex-col justify-between cursor-default"
@@ -124,7 +105,7 @@ export const EducationCertifications: React.FC = () => {
                 </a>
               </div>
             </SpotlightCard>
-          </motion.div>
+          </Reveal>
 
         </div>
 
