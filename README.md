@@ -9,7 +9,7 @@ Built with **React 19**, **TypeScript**, **Vite**, and **Tailwind CSS v4**.
 ## ⚡ Features
 
 - **Hero & Senior-to-Staff Positioning:** Direct summary of production AI agents, Amazon Comprehend ML pipelines, and enterprise platform leadership.
-- **Interactive AI Memory Simulator (Neuron):** Live, playable terminal reproducing the schema-enforced, git-diffable markdown memory harness used by AI coding agents (`Claude Code`, `Cursor`, `Codex CLI`, `Copilot CLI`).
+- **Guided AI Memory Showcase (Neuron):** Interactive 4-step architectural walkthrough of the schema-enforced, git-diffable markdown memory harness used by AI coding agents (`Claude Code`, `Cursor`, `Codex CLI`, `Copilot CLI`).
 - **Open-Source Spotlight (`Neuron`):** Architecture breakdown comparing opaque vector DBs against git-diffable schema-enforced markdown, with live npm download stats (~1,600+/wk) and 40+ published releases.
 - **Experience Timeline:** Detailed architectural case studies for ALSAC / St. Jude Children's Research Hospital, TruckPro, and American Home Shield.
 - **Production Metrics Ribbon:** Quantitative impact counters (3,000+ docs/mo automated, 50+ hrs/mo saved, 200+ peak concurrent users, 2,000+ support tickets killed).

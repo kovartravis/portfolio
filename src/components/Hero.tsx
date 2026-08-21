@@ -176,16 +176,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResumeModal }) => {
               {/* Highlight badge above terminal */}
               <div className="flex items-center justify-between mb-2.5 px-1">
                 <span className="text-xs font-bold text-slate-600 uppercase tracking-wider flex items-center gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5 text-cyan-600" /> Interactive AI Memory Simulator
+                  <Sparkles className="w-3.5 h-3.5 text-cyan-600" /> Guided AI Memory Showcase
                 </span>
-                <span className="text-xs text-slate-400 font-mono">Live Demo</span>
+                <span className="text-xs text-slate-400 font-mono">Architecture Walkthrough</span>
               </div>
 
               {/* Terminal Container */}
               <TerminalDemo />
               
               <div className="mt-3 text-center text-xs text-slate-500">
-                Interactive preview of <span className="text-slate-900 font-semibold">Neuron</span> — persistent schema-enforced memory for coding agents.
+                High-level walkthrough of <span className="text-slate-900 font-semibold">Neuron</span> — persistent schema-enforced memory for coding agents.
               </div>
             </div>
           </Reveal>
