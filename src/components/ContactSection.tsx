@@ -57,11 +57,11 @@ export const ContactSection: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 sm:py-32 bg-[#fafaf9] relative overflow-hidden">
+    <section id="contact" className="py-16 sm:py-20 bg-[#fafaf9] relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <Reveal className="text-center max-w-2xl mx-auto mb-16">
+        <Reveal className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-bold uppercase tracking-wider mb-3">
             <Mail className="w-3.5 h-3.5" /> Get In Touch
           </div>
@@ -73,7 +73,7 @@ export const ContactSection: React.FC = () => {
           </p>
         </Reveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 max-w-5xl mx-auto items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-5xl mx-auto items-start">
           
           {/* Left: Quick Connect Card */}
           <div className="lg:col-span-5 space-y-5">

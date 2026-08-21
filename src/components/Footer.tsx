@@ -9,7 +9,7 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="py-14 bg-white border-t border-stone-200 text-slate-500 text-xs">
+    <footer className="py-10 bg-white border-t border-stone-200 text-slate-500 text-xs">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           
@@ -49,7 +49,7 @@ export const Footer: React.FC = () => {
 
         </div>
 
-        <div className="mt-10 pt-6 border-t border-stone-100 flex flex-col sm:flex-row items-center justify-between gap-3 text-slate-400 text-[11px]">
+        <div className="mt-6 pt-5 border-t border-stone-100 flex flex-col sm:flex-row items-center justify-between gap-3 text-slate-400 text-[11px]">
           <div>
             © {new Date().getFullYear()} Travis Kovar. All rights reserved.
           </div>

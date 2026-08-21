@@ -13,11 +13,11 @@ import { Reveal } from './effects/Reveal';
 
 export const Experience: React.FC = () => {
   return (
-    <section id="experience" className="py-24 sm:py-32 bg-stone-100/50 border-t border-stone-200/80 relative">
+    <section id="experience" className="py-16 sm:py-20 bg-stone-100/50 border-t border-stone-200/80 relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <Reveal className="text-center max-w-2xl mx-auto mb-16">
+        <Reveal className="text-center max-w-2xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-bold uppercase tracking-wider mb-3">
             <Briefcase className="w-3.5 h-3.5" /> Work Experience & Systems Built
           </div>
@@ -30,7 +30,7 @@ export const Experience: React.FC = () => {
         </Reveal>
 
         {/* Experience Timeline */}
-        <div className="space-y-10">
+        <div className="space-y-8">
           {EXPERIENCES.map((exp, idx) => {
             const isStJude = exp.id === 'st-jude';
 

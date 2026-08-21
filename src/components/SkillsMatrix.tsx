@@ -43,11 +43,11 @@ export const SkillsMatrix: React.FC = () => {
   }).filter((cat) => cat.skills.length > 0);
 
   return (
-    <section id="skills" className="py-24 sm:py-32 bg-[#fafaf9] relative">
+    <section id="skills" className="py-16 sm:py-20 bg-[#fafaf9] relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <Reveal className="text-center max-w-2xl mx-auto mb-14">
+        <Reveal className="text-center max-w-2xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-bold uppercase tracking-wider mb-3">
             <Cpu className="w-3.5 h-3.5" /> Technical Expertise & Stack
           </div>
@@ -60,7 +60,7 @@ export const SkillsMatrix: React.FC = () => {
         </Reveal>
 
         {/* Filters & Search */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-12">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
           
           {/* Tab buttons with layoutId */}
           <div className="flex flex-wrap gap-1.5 p-1.5 rounded-2xl bg-stone-100 border border-stone-200 w-full sm:w-auto overflow-x-auto">
@@ -101,7 +101,7 @@ export const SkillsMatrix: React.FC = () => {
         </div>
 
         {/* Categories & Skills Display */}
-        <div className="space-y-10">
+        <div className="space-y-6">
           <AnimatePresence mode="popLayout">
             {filteredCategories.map((cat) => {
               const Icon = CATEGORY_ICONS[cat.category] || Code;

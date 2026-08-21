@@ -6,11 +6,11 @@ import { Reveal } from './effects/Reveal';
 
 export const EducationCertifications: React.FC = () => {
   return (
-    <section id="credentials" className="py-24 sm:py-32 bg-stone-100/50 border-t border-stone-200/80 relative">
+    <section id="credentials" className="py-16 sm:py-20 bg-stone-100/50 border-t border-stone-200/80 relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <Reveal className="text-center max-w-2xl mx-auto mb-16">
+        <Reveal className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-bold uppercase tracking-wider mb-3">
             <Award className="w-3.5 h-3.5" /> Education & Credentials
           </div>
@@ -19,7 +19,7 @@ export const EducationCertifications: React.FC = () => {
           </h2>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           
           {/* Degree Card */}
           <Reveal delay={0}>
