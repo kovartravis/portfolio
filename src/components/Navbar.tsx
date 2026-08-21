@@ -60,7 +60,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
             <div className="font-bold text-slate-900 group-hover:text-cyan-700 transition-colors flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm whitespace-nowrap">
               <span>{PERSONAL_INFO.name}</span>
               <span className="inline-flex items-center px-1.5 sm:px-2 py-0.5 rounded-full text-[9px] sm:text-[10px] font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200 shrink-0">
-                Staff SWE
+                Senior SWE
               </span>
             </div>
             <p className="text-[11px] text-slate-500 hidden sm:block whitespace-nowrap">

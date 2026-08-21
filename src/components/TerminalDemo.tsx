@@ -168,7 +168,7 @@ Ready! Run \`neuron status\` to verify.`,
       newHistory.push({
         id: (Date.now() + 1).toString(),
         type: 'output',
-        text: `TRAVIS KOVAR — Staff Software Engineer (AI Systems & Full-Stack)
+        text: `TRAVIS KOVAR — Senior Software Engineer (AI Systems & Full-Stack)
 Cordova, TN | (512) 800-4209 | kovartravis@gmail.com
 • St. Jude / ALSAC: Built AI agents, ML pipeline (3k docs/mo), Event Experiences platform (200+ peak users).
 • Neuron: Open-source persistent memory for AI coding agents (~1.6k+ weekly npm downloads).

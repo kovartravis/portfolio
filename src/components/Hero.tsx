@@ -42,7 +42,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResumeModal }) => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
           
-          {/* Left Column: Staff Positioning & Thesis */}
+          {/* Left Column: Positioning & Thesis */}
           <Reveal className="lg:col-span-6 space-y-7 text-left">
             {/* Status Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-stone-200/90 shadow-xs max-w-full">
@@ -51,7 +51,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResumeModal }) => {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
               <span className="text-xs font-semibold text-slate-700 whitespace-nowrap overflow-hidden text-ellipsis">
-                Staff Software Engineer · AI Systems & Full-Stack
+                Senior Software Engineer · AI Systems & Full-Stack
               </span>
             </div>
 

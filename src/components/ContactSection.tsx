@@ -69,7 +69,7 @@ export const ContactSection: React.FC = () => {
             Let's Build Something High-Impact
           </h2>
           <p className="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed text-pretty">
-            Whether you are looking for staff engineering leadership in AI systems, platform architecture, or open-source collaboration, let's talk.
+            Whether you are looking for senior or staff-track engineering talent in AI systems, platform architecture, or open-source collaboration, let's talk.
           </p>
         </Reveal>
 
@@ -209,7 +209,7 @@ export const ContactSection: React.FC = () => {
                   required
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                  placeholder="Staff Engineer Opportunity / AI Architecture Inquiry"
+                  placeholder="Senior / Staff Engineer Opportunity / AI Architecture Inquiry"
                   className="w-full bg-stone-50 border border-stone-200 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:bg-white focus:outline-none focus:border-cyan-600 shadow-2xs"
                 />
               </div>

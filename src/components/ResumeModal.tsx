@@ -46,7 +46,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
   const handleCopyText = () => {
     const rawResume = `TRAVIS KOVAR
-Staff Software Engineer — AI Systems & Full-Stack
+${PERSONAL_INFO.title}
 Cordova, TN · ${PERSONAL_INFO.phone} · ${PERSONAL_INFO.email} · github.com/kovartravis
 
 SUMMARY

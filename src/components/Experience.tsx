@@ -67,7 +67,7 @@ export const Experience: React.FC = () => {
                       <div className="flex items-center gap-2">
                         <div className="px-3.5 py-1.5 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold flex items-center gap-1.5 whitespace-nowrap">
                           <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                          Current Role · Staff Level Scope
+                          Current Role · Senior SWE / Informal Lead
                         </div>
                       </div>
                     )}

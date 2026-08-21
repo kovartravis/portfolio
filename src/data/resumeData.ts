@@ -52,14 +52,14 @@ export interface SkillCategory {
 
 export const PERSONAL_INFO = {
   name: "TRAVIS KOVAR",
-  title: "Staff Software Engineer — AI Systems & Full-Stack",
+  title: "Senior Software Engineer — AI Systems & Full-Stack",
   headline: "I build and ship — from production AI agents and ML pipelines to full-stack platforms used by hundreds of people.",
   location: "Cordova, TN",
   phone: "(512) 800-4209",
   email: "kovartravis@gmail.com",
   github: "https://github.com/kovartravis",
   neuronRepo: "https://github.com/kovartravis/neuron",
-  availability: "Open to Staff / Lead AI & Full-Stack Roles",
+  availability: "Senior SWE · Targeting Staff / Lead Roles",
   summary:
     "Software engineer who builds and ships — from production AI agents to full-stack platforms used by hundreds of people. I've built internal libraries and project templates that other engineering teams picked up on their own, and I informally lead a group of 8 engineers without needing a title to do it. I go looking for the problem worth solving rather than waiting to be assigned one, and I'd rather ship something real than write a plan about shipping it.",
 };
