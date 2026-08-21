@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'motion/react';
 import { 
   Mail, 
   Phone, 
@@ -11,6 +12,7 @@ import {
 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/resumeData';
 import { GithubIcon } from './Icons';
+import { SpotlightCard } from './effects/SpotlightCard';
 import confetti from 'canvas-confetti';
 
 export const ContactSection: React.FC = () => {
@@ -59,17 +61,23 @@ export const ContactSection: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-2xl mx-auto mb-16"
+        >
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-bold uppercase tracking-wider mb-3">
             <Mail className="w-3.5 h-3.5" /> Get In Touch
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight text-balance">
             Let's Build Something High-Impact
           </h2>
-          <p className="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed">
+          <p className="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed text-pretty">
             Whether you are looking for staff engineering leadership in AI systems, platform architecture, or open-source collaboration, let's talk.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 max-w-5xl mx-auto items-start">
           
@@ -77,7 +85,10 @@ export const ContactSection: React.FC = () => {
           <div className="lg:col-span-5 space-y-5">
             
             {/* Direct Email Card */}
-            <div className="p-7 rounded-3xl bg-white border border-stone-200 shadow-xs hover:shadow-md transition-all">
+            <SpotlightCard
+              spotlightColor="rgba(6, 182, 212, 0.1)"
+              className="p-7 rounded-3xl bg-white border border-stone-200 shadow-xs hover:shadow-md transition-all cursor-default"
+            >
               <div className="flex items-center justify-between mb-4">
                 <div className="p-2.5 rounded-xl bg-cyan-50 border border-cyan-200 text-cyan-700">
                   <Mail className="w-5 h-5" />
@@ -105,10 +116,13 @@ export const ContactSection: React.FC = () => {
                   Open Mail App
                 </a>
               </div>
-            </div>
+            </SpotlightCard>
 
             {/* Phone & Location Card */}
-            <div className="p-7 rounded-3xl bg-white border border-stone-200 shadow-xs hover:shadow-md transition-all space-y-5">
+            <SpotlightCard
+              spotlightColor="rgba(99, 102, 241, 0.08)"
+              className="p-7 rounded-3xl bg-white border border-stone-200 shadow-xs hover:shadow-md transition-all space-y-5 cursor-default"
+            >
               <div>
                 <div className="flex items-center gap-2 text-slate-500 text-xs font-medium mb-1">
                   <Phone className="w-3.5 h-3.5 text-emerald-600" /> Phone
@@ -147,7 +161,7 @@ export const ContactSection: React.FC = () => {
                   <span>github.com/kovartravis</span>
                 </a>
               </div>
-            </div>
+            </SpotlightCard>
 
           </div>
 

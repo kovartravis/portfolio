@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'motion/react';
 import { 
   Sparkles, 
   Terminal as TerminalIcon, 
@@ -42,7 +43,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResumeModal }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
           
           {/* Left Column: Staff Positioning & Thesis */}
-          <div className="lg:col-span-6 space-y-7 text-left">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-6 space-y-7 text-left"
+          >
             {/* Status Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-stone-200/90 shadow-xs max-w-full">
               <span className="relative flex h-2 w-2 shrink-0">
@@ -167,10 +173,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResumeModal }) => {
                 <span>github.com/kovartravis</span>
               </a>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column: Live Interactive Neuron Terminal Demo */}
-          <div className="lg:col-span-6">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-6"
+          >
             <div className="relative">
               {/* Highlight badge above terminal */}
               <div className="flex items-center justify-between mb-2.5 px-1">
@@ -187,7 +198,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResumeModal }) => {
                 Interactive preview of <span className="text-slate-900 font-semibold">Neuron</span> — persistent schema-enforced memory for coding agents.
               </div>
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>

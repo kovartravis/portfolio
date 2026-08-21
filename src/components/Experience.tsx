@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { EXPERIENCES } from '../data/resumeData';
 import { 
   Briefcase, 
@@ -8,6 +9,7 @@ import {
   Users, 
   TrendingUp 
 } from 'lucide-react';
+import { SpotlightCard } from './effects/SpotlightCard';
 
 export const Experience: React.FC = () => {
   return (
@@ -15,26 +17,36 @@ export const Experience: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-2xl mx-auto mb-16"
+        >
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-bold uppercase tracking-wider mb-3">
             <Briefcase className="w-3.5 h-3.5" /> Work Experience & Systems Built
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight text-balance">
             High-Impact Engineering History
           </h2>
-          <p className="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed">
+          <p className="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed text-pretty">
             From zero-to-one greenfield platforms and autonomous AI agents to enterprise modernization and informal engineering leadership.
           </p>
-        </div>
+        </motion.div>
 
         {/* Experience Timeline */}
         <div className="space-y-10">
-          {EXPERIENCES.map((exp) => {
+          {EXPERIENCES.map((exp, idx) => {
             const isStJude = exp.id === 'st-jude';
 
             return (
-              <div
+              <motion.div
                 key={exp.id}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
                 className="rounded-3xl border border-stone-200 bg-white shadow-xs hover:shadow-md transition-all duration-300 overflow-hidden"
               >
                 {/* Header Banner */}
@@ -86,9 +98,10 @@ export const Experience: React.FC = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {exp.highlights.map((hl, hlIdx) => (
-                      <div
+                      <SpotlightCard
                         key={hlIdx}
-                        className="group p-6 rounded-2xl bg-stone-50/70 border border-stone-200/80 hover:border-stone-300 transition-all hover:bg-white flex flex-col justify-between shadow-2xs"
+                        spotlightColor="rgba(6, 182, 212, 0.08)"
+                        className="group p-6 rounded-2xl bg-stone-50/70 border border-stone-200/80 hover:border-stone-300 transition-all hover:bg-white flex flex-col justify-between shadow-2xs cursor-default"
                       >
                         <div>
                           {/* Title & Metric */}
@@ -124,12 +137,12 @@ export const Experience: React.FC = () => {
                             ))}
                           </div>
                         </div>
-                      </div>
+                      </SpotlightCard>
                     ))}
                   </div>
                 </div>
 
-              </div>
+              </motion.div>
             );
           })}
         </div>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { 
   Sparkles, 
   GitBranch, 
@@ -12,6 +13,8 @@ import {
 } from 'lucide-react';
 import { NEURON_PROJECT } from '../data/resumeData';
 import { GithubIcon } from './Icons';
+import { BorderBeam } from './effects/BorderBeam';
+import { SpotlightCard } from './effects/SpotlightCard';
 
 export const NeuronShowcase: React.FC = () => {
   const [copiedCmd, setCopiedCmd] = useState(false);
@@ -120,26 +123,26 @@ export default {
 
         {/* Stats Row */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-5 mb-14">
-          <div className="p-4 sm:p-5 rounded-2xl bg-white border border-stone-200 shadow-xs">
+          <SpotlightCard className="p-4 sm:p-5 rounded-2xl bg-white border border-stone-200 shadow-xs cursor-default">
             <div className="text-xs text-slate-500 font-medium whitespace-nowrap">Weekly Downloads</div>
             <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-950 font-mono mt-1 whitespace-nowrap">~1,600+</div>
             <div className="text-[11px] text-slate-400 mt-0.5 whitespace-nowrap">Active npm ecosystem</div>
-          </div>
-          <div className="p-4 sm:p-5 rounded-2xl bg-white border border-stone-200 shadow-xs">
+          </SpotlightCard>
+          <SpotlightCard className="p-4 sm:p-5 rounded-2xl bg-white border border-stone-200 shadow-xs cursor-default">
             <div className="text-xs text-slate-500 font-medium whitespace-nowrap">Releases</div>
             <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-950 font-mono mt-1 whitespace-nowrap">40+ Versions</div>
             <div className="text-[11px] text-slate-400 mt-0.5 whitespace-nowrap">Actively maintained</div>
-          </div>
-          <div className="p-4 sm:p-5 rounded-2xl bg-white border border-stone-200 shadow-xs">
+          </SpotlightCard>
+          <SpotlightCard className="p-4 sm:p-5 rounded-2xl bg-white border border-stone-200 shadow-xs cursor-default">
             <div className="text-xs text-slate-500 font-medium whitespace-nowrap">License</div>
             <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-950 font-mono mt-1 whitespace-nowrap">MIT</div>
             <div className="text-[11px] text-slate-400 mt-0.5 whitespace-nowrap">Open source & free</div>
-          </div>
-          <div className="p-4 sm:p-5 rounded-2xl bg-white border border-stone-200 shadow-xs">
+          </SpotlightCard>
+          <SpotlightCard className="p-4 sm:p-5 rounded-2xl bg-white border border-stone-200 shadow-xs cursor-default">
             <div className="text-xs text-slate-500 font-medium whitespace-nowrap">Storage Engine</div>
             <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-950 font-mono mt-1 whitespace-nowrap">Git Markdown</div>
             <div className="text-[11px] text-slate-400 mt-0.5 whitespace-nowrap">Zero opaque lock-in</div>
-          </div>
+          </SpotlightCard>
         </div>
 
         {/* Deep Architecture Comparison */}
@@ -154,7 +157,7 @@ export default {
             
             <div className="grid grid-cols-1 gap-4">
               {/* Traditional Box */}
-              <div className="p-5 rounded-2xl bg-rose-50/50 border border-rose-200/70">
+              <div className="p-5 rounded-2xl bg-rose-50/50 border border-rose-200/70 shadow-2xs">
                 <div className="flex items-center gap-2 text-xs font-bold text-rose-800 uppercase tracking-wide mb-2">
                   <XCircle className="w-4 h-4 text-rose-600" /> Traditional Vector / Embedding DB
                 </div>
@@ -166,7 +169,7 @@ export default {
               </div>
 
               {/* Neuron Box */}
-              <div className="p-5 rounded-2xl bg-cyan-50/50 border border-cyan-200/80">
+              <div className="p-5 rounded-2xl bg-cyan-50/50 border border-cyan-200/80 shadow-2xs">
                 <div className="flex items-center gap-2 text-xs font-bold text-cyan-900 uppercase tracking-wide mb-2">
                   <CheckCircle2 className="w-4 h-4 text-cyan-700" /> Neuron's Schema-Enforced Approach
                 </div>
@@ -181,16 +184,19 @@ export default {
             {/* Architecture Highlights */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
               {NEURON_PROJECT.architecturePoints.map((pt, idx) => (
-                <div key={idx} className="p-4 rounded-xl bg-white border border-stone-200 shadow-xs">
+                <SpotlightCard key={idx} className="p-4 rounded-xl bg-white border border-stone-200 shadow-xs cursor-default">
                   <h4 className="text-xs font-bold text-slate-900">{pt.title}</h4>
                   <p className="text-xs text-slate-500 mt-1 leading-relaxed">{pt.description}</p>
-                </div>
+                </SpotlightCard>
               ))}
             </div>
           </div>
 
-          {/* Right: Interactive Harness Configs & Code Viewer */}
-          <div className="lg:col-span-6 bg-slate-950 rounded-2xl border border-slate-800 p-6 shadow-xl text-slate-100">
+          {/* Right: Interactive Harness Configs & Code Viewer with BorderBeam */}
+          <div className="lg:col-span-6 relative bg-slate-950 rounded-2xl border border-slate-800 p-6 shadow-2xl text-slate-100 overflow-hidden">
+            {/* Animated glowing border beam effect */}
+            <BorderBeam size={220} duration={10} colorFrom="#06b6d4" colorTo="#818cf8" />
+
             <div className="flex items-center justify-between border-b border-slate-800 pb-3.5 mb-4">
               <div className="text-xs font-bold text-slate-200 flex items-center gap-2">
                 <Cpu className="w-4 h-4 text-cyan-400" />
@@ -220,10 +226,19 @@ export default {
               {harnessDetails[activeHarness].tagline}
             </p>
 
-            {/* Code snippet block */}
-            <div className="rounded-xl bg-slate-900 p-4 border border-slate-800 font-mono text-xs overflow-x-auto text-slate-200 leading-relaxed scrollbar-thin">
-              <pre className="text-cyan-300">{harnessDetails[activeHarness].code}</pre>
-            </div>
+            {/* Code snippet block with smooth transition */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeHarness}
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -6 }}
+                transition={{ duration: 0.2 }}
+                className="rounded-xl bg-slate-900 p-4 border border-slate-800 font-mono text-xs overflow-x-auto text-slate-200 leading-relaxed scrollbar-thin"
+              >
+                <pre className="text-cyan-300">{harnessDetails[activeHarness].code}</pre>
+              </motion.div>
+            </AnimatePresence>
 
             <div className="mt-4 pt-3.5 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
               <span className="flex items-center gap-1.5">
