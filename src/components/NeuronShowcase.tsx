@@ -119,25 +119,25 @@ export default {
         </div>
 
         {/* Stats Row */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 mb-14">
-          <div className="p-5 rounded-2xl bg-white border border-stone-200 shadow-xs">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-5 mb-14">
+          <div className="p-4 sm:p-5 rounded-2xl bg-white border border-stone-200 shadow-xs">
             <div className="text-xs text-slate-500 font-medium whitespace-nowrap">Weekly Downloads</div>
-            <div className="text-2xl sm:text-3xl font-extrabold text-slate-950 font-mono mt-1 whitespace-nowrap">~1,600+</div>
+            <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-950 font-mono mt-1 whitespace-nowrap">~1,600+</div>
             <div className="text-[11px] text-slate-400 mt-0.5 whitespace-nowrap">Active npm ecosystem</div>
           </div>
-          <div className="p-5 rounded-2xl bg-white border border-stone-200 shadow-xs">
+          <div className="p-4 sm:p-5 rounded-2xl bg-white border border-stone-200 shadow-xs">
             <div className="text-xs text-slate-500 font-medium whitespace-nowrap">Releases</div>
-            <div className="text-2xl sm:text-3xl font-extrabold text-slate-950 font-mono mt-1 whitespace-nowrap">40+ Versions</div>
+            <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-950 font-mono mt-1 whitespace-nowrap">40+ Versions</div>
             <div className="text-[11px] text-slate-400 mt-0.5 whitespace-nowrap">Actively maintained</div>
           </div>
-          <div className="p-5 rounded-2xl bg-white border border-stone-200 shadow-xs">
+          <div className="p-4 sm:p-5 rounded-2xl bg-white border border-stone-200 shadow-xs">
             <div className="text-xs text-slate-500 font-medium whitespace-nowrap">License</div>
-            <div className="text-2xl sm:text-3xl font-extrabold text-slate-950 font-mono mt-1 whitespace-nowrap">MIT</div>
+            <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-950 font-mono mt-1 whitespace-nowrap">MIT</div>
             <div className="text-[11px] text-slate-400 mt-0.5 whitespace-nowrap">Open source & free</div>
           </div>
-          <div className="p-5 rounded-2xl bg-white border border-stone-200 shadow-xs">
+          <div className="p-4 sm:p-5 rounded-2xl bg-white border border-stone-200 shadow-xs">
             <div className="text-xs text-slate-500 font-medium whitespace-nowrap">Storage Engine</div>
-            <div className="text-2xl sm:text-3xl font-extrabold text-slate-950 font-mono mt-1 whitespace-nowrap">Git Markdown</div>
+            <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-950 font-mono mt-1 whitespace-nowrap">Git Markdown</div>
             <div className="text-[11px] text-slate-400 mt-0.5 whitespace-nowrap">Zero opaque lock-in</div>
           </div>
         </div>

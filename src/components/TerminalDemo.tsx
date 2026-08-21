@@ -44,10 +44,12 @@ export const TerminalDemo: React.FC = () => {
 
   const [inputVal, setInputVal] = useState('');
   const [isCopied, setIsCopied] = useState(false);
-  const bottomRef = useRef<HTMLDivElement>(null);
+  const terminalBodyRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (terminalBodyRef.current) {
+      terminalBodyRef.current.scrollTop = terminalBodyRef.current.scrollHeight;
+    }
   }, [history]);
 
   const executeCommand = (rawCmd: string) => {
@@ -251,7 +253,7 @@ Cordova, TN | (512) 800-4209 | kovartravis@gmail.com
       </div>
 
       {/* Terminal Output Body */}
-      <div className="p-4 sm:p-5 h-80 sm:h-96 overflow-y-auto space-y-3 font-mono text-xs sm:text-sm scrollbar-thin">
+      <div ref={terminalBodyRef} className="p-4 sm:p-5 h-80 sm:h-96 overflow-y-auto space-y-3 font-mono text-xs sm:text-sm scrollbar-thin">
         {history.map((line) => {
           if (line.type === 'command') {
             return (
@@ -310,7 +312,6 @@ Cordova, TN | (512) 800-4209 | kovartravis@gmail.com
             </div>
           );
         })}
-        <div ref={bottomRef} />
       </div>
 
       {/* Preset Command Buttons */}
