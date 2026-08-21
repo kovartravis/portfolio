@@ -139,8 +139,8 @@ export const NeuralBackground: React.FC = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-0 opacity-60"
-      style={{ mixBlendMode: 'multiply' }}
+      className="fixed inset-0 pointer-events-none -z-10 opacity-50"
+      style={{ transform: 'translate3d(0, 0, 0)' }}
     />
   );
 };

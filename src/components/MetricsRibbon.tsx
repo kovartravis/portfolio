@@ -12,10 +12,11 @@ export const MetricsRibbon: React.FC = () => {
     <section className="py-20 sm:py-24 bg-stone-100/60 border-y border-stone-200/80 relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.5 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.45 }}
+          style={{ transform: 'translate3d(0, 0, 0)', backfaceVisibility: 'hidden' }}
           className="text-center max-w-2xl mx-auto mb-14"
         >
           <h2 className="text-xs font-bold uppercase tracking-widest text-cyan-800 mb-2">
@@ -32,10 +33,11 @@ export const MetricsRibbon: React.FC = () => {
             return (
               <motion.div
                 key={metric.label}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.5, delay: idx * 0.08 }}
+                viewport={{ once: true, margin: '-30px' }}
+                transition={{ duration: 0.45, delay: idx * 0.06 }}
+                style={{ transform: 'translate3d(0, 0, 0)', backfaceVisibility: 'hidden' }}
               >
                 <SpotlightCard
                   spotlightColor="rgba(6, 182, 212, 0.12)"

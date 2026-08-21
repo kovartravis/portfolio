@@ -36,6 +36,7 @@ export const SpotlightCard: React.FC<SpotlightCardProps> = ({
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      style={{ transform: 'translate3d(0, 0, 0)', backfaceVisibility: 'hidden' }}
       className={`relative overflow-hidden ${className}`}
       {...props}
     >
@@ -44,6 +45,7 @@ export const SpotlightCard: React.FC<SpotlightCardProps> = ({
         style={{
           opacity,
           background: `radial-gradient(400px circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 70%)`,
+          transform: 'translate3d(0, 0, 0)',
         }}
       />
       {children}

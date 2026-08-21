@@ -18,10 +18,11 @@ export const Experience: React.FC = () => {
         
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.5 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.45 }}
+          style={{ transform: 'translate3d(0, 0, 0)', backfaceVisibility: 'hidden' }}
           className="text-center max-w-2xl mx-auto mb-16"
         >
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-bold uppercase tracking-wider mb-3">
@@ -43,10 +44,11 @@ export const Experience: React.FC = () => {
             return (
               <motion.div
                 key={exp.id}
-                initial={{ opacity: 0, y: 25 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-50px' }}
-                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.45, delay: idx * 0.08 }}
+                style={{ transform: 'translate3d(0, 0, 0)', backfaceVisibility: 'hidden' }}
                 className="rounded-3xl border border-stone-200 bg-white shadow-xs hover:shadow-md transition-all duration-300 overflow-hidden"
               >
                 {/* Header Banner */}
