@@ -192,7 +192,7 @@ export const EXPERIENCES: ExperienceItem[] = [
         description:
           "Architected and built the Event Experiences platform from the ground up to track event revenue and expenses, supporting high peak concurrency during major campaigns.",
         metrics: "200+ peak concurrent users; 2,000+ support tickets eliminated",
-        tags: ["React", "TypeScript", "C# .NET", "AWS", "Kafka", "SQL"],
+        tags: ["React", "TypeScript", "C# .NET", "AWS", "Kafka"],
       },
       {
         title: "Legacy Monolith Modernization & Team Leadership",
@@ -339,11 +339,6 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
         name: "Apache Kafka & Event-Driven",
         level: "Advanced",
         context: "Asynchronous event streaming and decoupled service architectures",
-      },
-      {
-        name: "SQL & Data Modeling",
-        level: "Advanced",
-        context: "PostgreSQL, SQL Server, relational schema design and query optimization",
       },
     ],
   },
