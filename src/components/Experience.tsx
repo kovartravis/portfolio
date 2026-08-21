@@ -3,12 +3,10 @@ import { EXPERIENCES } from '../data/resumeData';
 import { 
   Briefcase, 
   Calendar, 
-  Sparkles, 
   CheckCircle2, 
   Users, 
   TrendingUp 
 } from 'lucide-react';
-import { SpotlightCard } from './effects/SpotlightCard';
 import { Reveal } from './effects/Reveal';
 
 export const Experience: React.FC = () => {
@@ -80,56 +78,44 @@ export const Experience: React.FC = () => {
                   </p>
                 </div>
 
-                {/* Highlights Grid */}
-                <div className="p-7 sm:p-9">
-                  <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-6 flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-cyan-600 shrink-0" /> Key Architectural Accomplishments & Delivered Value
-                  </h4>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {exp.highlights.map((hl, hlIdx) => (
-                      <SpotlightCard
-                        key={hlIdx}
-                        spotlightColor="rgba(6, 182, 212, 0.08)"
-                        className="group p-6 rounded-2xl bg-stone-50/70 border border-stone-200/80 hover:border-stone-300 transition-all hover:bg-white flex flex-col justify-between shadow-2xs cursor-default"
-                      >
-                        <div>
-                          {/* Title & Metric */}
-                          <div className="flex items-start justify-between gap-3 mb-2.5">
-                            <h5 className="text-base font-bold text-slate-900 group-hover:text-cyan-900 transition-colors text-balance">
-                              {hl.title}
-                            </h5>
-                          </div>
-
-                          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-5 text-pretty">
-                            {hl.description}
-                          </p>
-                        </div>
-
-                        <div>
-                          {/* Highlight Impact Metric */}
+                {/* Accomplishments List without nested box clutter */}
+                <div className="p-7 sm:p-9 divide-y divide-stone-100">
+                  {exp.highlights.map((hl, hlIdx) => (
+                    <div
+                      key={hlIdx}
+                      className={`py-5 first:pt-0 last:pb-0 flex flex-col md:flex-row md:items-start justify-between gap-4`}
+                    >
+                      <div className="space-y-2 max-w-3xl">
+                        <div className="flex flex-wrap items-center gap-2.5">
+                          <h4 className="text-base font-bold text-slate-900 text-balance">
+                            {hl.title}
+                          </h4>
                           {hl.metrics && (
-                            <div className="mb-4 p-3 rounded-xl bg-cyan-50/80 border border-cyan-200 text-xs font-medium text-cyan-900 flex items-center gap-2">
-                              <TrendingUp className="w-4 h-4 text-cyan-700 shrink-0" />
-                              <span className="text-pretty">{hl.metrics}</span>
-                            </div>
+                            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-cyan-50 text-cyan-800 border border-cyan-200">
+                              <TrendingUp className="w-3 h-3 text-cyan-700 shrink-0" />
+                              {hl.metrics}
+                            </span>
                           )}
-
-                          {/* Tech Tags */}
-                          <div className="flex flex-wrap gap-1.5 pt-1">
-                            {hl.tags.map((tag) => (
-                              <span
-                                key={tag}
-                                className="px-2.5 py-0.5 rounded-md text-[11px] font-mono bg-white text-slate-600 border border-stone-200 shadow-2xs whitespace-nowrap"
-                              >
-                                {tag}
-                              </span>
-                            ))}
-                          </div>
                         </div>
-                      </SpotlightCard>
-                    ))}
-                  </div>
+
+                        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed text-pretty">
+                          {hl.description}
+                        </p>
+                      </div>
+
+                      {/* Tech Tags */}
+                      <div className="flex flex-wrap md:justify-end gap-1.5 shrink-0 max-w-xs pt-1 md:pt-0">
+                        {hl.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="px-2 py-0.5 rounded-md text-[11px] font-mono bg-stone-100/80 text-slate-600 border border-stone-200 whitespace-nowrap"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
                 </div>
 
               </div>

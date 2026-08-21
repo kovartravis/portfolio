@@ -7,10 +7,8 @@ import {
   Server, 
   Users, 
   Search, 
-  CheckCircle2, 
   Code 
 } from 'lucide-react';
-import { SpotlightCard } from './effects/SpotlightCard';
 import { Reveal } from './effects/Reveal';
 
 const CATEGORY_ICONS: Record<string, React.ElementType> = {
@@ -100,8 +98,8 @@ export const SkillsMatrix: React.FC = () => {
           </div>
         </div>
 
-        {/* Categories & Skills Display */}
-        <div className="space-y-6">
+        {/* Categories & Skills Display - Clean 2x2 Grid without 24 nested boxes */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <AnimatePresence mode="popLayout">
             {filteredCategories.map((cat) => {
               const Icon = CATEGORY_ICONS[cat.category] || Code;
@@ -112,40 +110,33 @@ export const SkillsMatrix: React.FC = () => {
                   initial={{ opacity: 0, scale: 0.98 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.98 }}
-                  transition={{ duration: 0.3 }}
-                  className="p-7 sm:p-9 rounded-3xl bg-white border border-stone-200 shadow-xs"
+                  transition={{ duration: 0.25 }}
+                  className="p-6 sm:p-7 rounded-3xl bg-white border border-stone-200 shadow-xs flex flex-col justify-between"
                 >
-                  <div className="flex items-center gap-3.5 mb-7">
-                    <div className="p-2.5 rounded-xl bg-stone-100 border border-stone-200 text-slate-800 shrink-0">
-                      <Icon className="w-5 h-5" />
+                  <div>
+                    <div className="flex items-center gap-3 mb-5">
+                      <div className="p-2.5 rounded-xl bg-stone-100 border border-stone-200 text-slate-800 shrink-0">
+                        <Icon className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-slate-950">{cat.category}</h3>
+                        <p className="text-xs text-slate-500">{cat.description}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-slate-950">{cat.category}</h3>
-                      <p className="text-xs text-slate-500">{cat.description}</p>
-                    </div>
-                  </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                    {cat.skills.map((skill) => (
-                      <SpotlightCard
-                        key={skill.name}
-                        spotlightColor="rgba(6, 182, 212, 0.1)"
-                        className="p-4.5 rounded-2xl bg-stone-50/70 border border-stone-200 hover:border-stone-300 transition-all hover:bg-white group shadow-2xs cursor-default"
-                      >
-                        <div className="flex items-center justify-between gap-2 mb-2">
-                          <span className="font-bold text-sm text-slate-900 group-hover:text-cyan-900 transition-colors text-balance">
-                            {skill.name}
-                          </span>
-                          <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-cyan-50 text-cyan-800 border border-cyan-200 whitespace-nowrap shrink-0">
+                    <div className="flex flex-wrap gap-2">
+                      {cat.skills.map((skill) => (
+                        <div
+                          key={skill.name}
+                          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-stone-50/80 border border-stone-200 text-xs font-medium text-slate-800 hover:border-cyan-400 hover:bg-cyan-50/50 transition-colors shadow-2xs cursor-default"
+                        >
+                          <span className="font-semibold">{skill.name}</span>
+                          <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-white text-cyan-800 border border-stone-200 font-semibold">
                             {skill.level}
                           </span>
                         </div>
-                        <p className="text-xs text-slate-600 leading-relaxed flex items-start gap-1.5 text-pretty">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 mt-0.5 shrink-0" />
-                          <span>{skill.context}</span>
-                        </p>
-                      </SpotlightCard>
-                    ))}
+                      ))}
+                    </div>
                   </div>
                 </motion.div>
               );

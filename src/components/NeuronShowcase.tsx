@@ -4,7 +4,6 @@ import {
   Sparkles, 
   GitBranch, 
   CheckCircle2, 
-  XCircle, 
   ExternalLink, 
   Copy, 
   Check, 
@@ -14,7 +13,6 @@ import {
 import { NEURON_PROJECT } from '../data/resumeData';
 import { GithubIcon } from './Icons';
 import { BorderBeam } from './effects/BorderBeam';
-import { SpotlightCard } from './effects/SpotlightCard';
 
 export const NeuronShowcase: React.FC = () => {
   const [copiedCmd, setCopiedCmd] = useState(false);
@@ -121,79 +119,71 @@ export default {
           </div>
         </div>
 
-        {/* Stats Row */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-5 mb-14">
-          <SpotlightCard className="p-4 sm:p-5 rounded-2xl bg-white border border-stone-200 shadow-xs cursor-default">
-            <div className="text-xs text-slate-500 font-medium whitespace-nowrap">Weekly Downloads</div>
-            <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-950 font-mono mt-1 whitespace-nowrap">~1,600+</div>
-            <div className="text-[11px] text-slate-400 mt-0.5 whitespace-nowrap">Active npm ecosystem</div>
-          </SpotlightCard>
-          <SpotlightCard className="p-4 sm:p-5 rounded-2xl bg-white border border-stone-200 shadow-xs cursor-default">
-            <div className="text-xs text-slate-500 font-medium whitespace-nowrap">Releases</div>
-            <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-950 font-mono mt-1 whitespace-nowrap">40+ Versions</div>
-            <div className="text-[11px] text-slate-400 mt-0.5 whitespace-nowrap">Actively maintained</div>
-          </SpotlightCard>
-          <SpotlightCard className="p-4 sm:p-5 rounded-2xl bg-white border border-stone-200 shadow-xs cursor-default">
-            <div className="text-xs text-slate-500 font-medium whitespace-nowrap">License</div>
-            <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-950 font-mono mt-1 whitespace-nowrap">MIT</div>
-            <div className="text-[11px] text-slate-400 mt-0.5 whitespace-nowrap">Open source & free</div>
-          </SpotlightCard>
-          <SpotlightCard className="p-4 sm:p-5 rounded-2xl bg-white border border-stone-200 shadow-xs cursor-default">
-            <div className="text-xs text-slate-500 font-medium whitespace-nowrap">Storage Engine</div>
-            <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-950 font-mono mt-1 whitespace-nowrap">Git Markdown</div>
-            <div className="text-[11px] text-slate-400 mt-0.5 whitespace-nowrap">Zero opaque lock-in</div>
-          </SpotlightCard>
+        {/* Quick Stat Highlights - Single inline bar */}
+        <div className="flex flex-wrap items-center justify-between gap-4 p-4 sm:p-5 rounded-2xl bg-white border border-stone-200 shadow-xs mb-10 text-xs text-slate-600">
+          <div className="flex items-center gap-2">
+            <span className="font-bold text-slate-950 font-mono text-sm sm:text-base">~1,600+</span>
+            <span className="text-slate-500">Weekly Downloads</span>
+          </div>
+          <div className="hidden sm:block h-4 w-px bg-stone-200" />
+          <div className="flex items-center gap-2">
+            <span className="font-bold text-slate-950 font-mono text-sm sm:text-base">40+</span>
+            <span className="text-slate-500">Versions Maintained</span>
+          </div>
+          <div className="hidden sm:block h-4 w-px bg-stone-200" />
+          <div className="flex items-center gap-2">
+            <span className="font-bold text-slate-950 font-mono text-sm sm:text-base">MIT</span>
+            <span className="text-slate-500">Open Source</span>
+          </div>
+          <div className="hidden sm:block h-4 w-px bg-stone-200" />
+          <div className="flex items-center gap-2">
+            <span className="font-bold text-cyan-800 font-mono text-sm sm:text-base">Git Markdown</span>
+            <span className="text-slate-500">Storage Engine</span>
+          </div>
         </div>
 
-        {/* Deep Architecture Comparison */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        {/* Deep Architecture & Live Integration Configs */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
-          {/* Why Git-Diffable Markdown vs Black-Box DB */}
-          <div className="lg:col-span-6 space-y-6">
-            <h3 className="text-xl font-bold text-slate-950 flex items-center gap-2">
-              <ShieldCheck className="w-5 h-5 text-cyan-700" />
-              Why Git-Diffable Markdown instead of a Black-Box DB?
-            </h3>
-            
-            <div className="grid grid-cols-1 gap-4">
-              {/* Traditional Box */}
-              <div className="p-5 rounded-2xl bg-rose-50/50 border border-rose-200/70 shadow-2xs">
-                <div className="flex items-center gap-2 text-xs font-bold text-rose-800 uppercase tracking-wide mb-2">
-                  <XCircle className="w-4 h-4 text-rose-600" /> Traditional Vector / Embedding DB
-                </div>
-                <ul className="text-xs text-slate-600 space-y-1.5 list-disc list-inside">
-                  <li>Opaque binary float embeddings cannot be verified in Git PRs</li>
-                  <li>Prone to silent hallucinations without strict schema guarantees</li>
-                  <li>Vendor lock-in with proprietary cloud databases & latency overhead</li>
-                </ul>
-              </div>
+          {/* Left Column: Why Git-Diffable Markdown */}
+          <div className="lg:col-span-5 space-y-4">
+            <div className="p-6 sm:p-7 rounded-3xl bg-white border border-stone-200 shadow-xs space-y-4">
+              <h3 className="text-lg font-bold text-slate-950 flex items-center gap-2">
+                <ShieldCheck className="w-5 h-5 text-cyan-700 shrink-0" />
+                Why Git Markdown over Vector DBs?
+              </h3>
 
-              {/* Neuron Box */}
-              <div className="p-5 rounded-2xl bg-cyan-50/50 border border-cyan-200/80 shadow-2xs">
-                <div className="flex items-center gap-2 text-xs font-bold text-cyan-900 uppercase tracking-wide mb-2">
-                  <CheckCircle2 className="w-4 h-4 text-cyan-700" /> Neuron's Schema-Enforced Approach
-                </div>
-                <ul className="text-xs text-slate-700 space-y-1.5 list-disc list-inside">
-                  <li><strong className="text-slate-950">100% Git-Diffable:</strong> Every memory and architectural rule is human-readable and reviewed in PRs</li>
-                  <li><strong className="text-slate-950">Schema Validation:</strong> Frontmatter is strictly typed with Zod/JSON schemas</li>
-                  <li><strong className="text-slate-950">Native Agent Hooks:</strong> Plugs directly into Claude Code, Codex, Cursor & Copilot CLI</li>
-                </ul>
-              </div>
-            </div>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed text-pretty">
+                Opaque binary embeddings cannot be code-reviewed in pull requests. Neuron provides an auditable memory layer that lives directly in your git repository.
+              </p>
 
-            {/* Architecture Highlights */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
-              {NEURON_PROJECT.architecturePoints.map((pt, idx) => (
-                <SpotlightCard key={idx} className="p-4 rounded-xl bg-white border border-stone-200 shadow-xs cursor-default">
-                  <h4 className="text-xs font-bold text-slate-900">{pt.title}</h4>
-                  <p className="text-xs text-slate-500 mt-1 leading-relaxed">{pt.description}</p>
-                </SpotlightCard>
-              ))}
+              <div className="space-y-3 pt-2">
+                <div className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-cyan-700 mt-0.5 shrink-0" />
+                  <div className="text-xs text-slate-700">
+                    <strong className="text-slate-950">100% Git-Diffable:</strong> Every memory and decision record is human-readable and reviewed in standard PR workflows.
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-cyan-700 mt-0.5 shrink-0" />
+                  <div className="text-xs text-slate-700">
+                    <strong className="text-slate-950">Schema-Enforced:</strong> Frontmatter metadata validated strictly against Zod / JSON schemas to stop agent hallucination.
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-cyan-700 mt-0.5 shrink-0" />
+                  <div className="text-xs text-slate-700">
+                    <strong className="text-slate-950">Native Agent Hooks:</strong> Integrates directly into Claude Code, Cursor, Codex, and Copilot CLI.
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Right: Interactive Harness Configs & Code Viewer with BorderBeam */}
-          <div className="lg:col-span-6 relative bg-slate-950 rounded-2xl border border-slate-800 p-6 shadow-2xl text-slate-100 overflow-hidden">
+          {/* Right Column: Interactive Harness Configs & Code Viewer with BorderBeam */}
+          <div className="lg:col-span-7 relative bg-slate-950 rounded-3xl border border-slate-800 p-6 sm:p-7 shadow-2xl text-slate-100 overflow-hidden">
             {/* Animated glowing border beam effect */}
             <BorderBeam size={220} duration={10} colorFrom="#06b6d4" colorTo="#818cf8" />
 
