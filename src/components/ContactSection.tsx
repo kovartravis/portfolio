@@ -138,7 +138,7 @@ export const ContactSection: React.FC = () => {
                   <MapPin className="w-3.5 h-3.5 text-rose-500" /> Location
                 </div>
                 <div className="text-sm font-bold text-slate-950">{PERSONAL_INFO.location}</div>
-                <div className="text-xs text-slate-400 mt-0.5">Open to remote & leadership roles</div>
+                <div className="text-xs text-slate-500 mt-0.5">Open to remote opportunities (US) & distributed teams</div>
               </div>
 
               <div className="pt-4 border-t border-stone-200">
