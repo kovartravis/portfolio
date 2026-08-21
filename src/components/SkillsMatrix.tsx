@@ -60,12 +60,12 @@ export const SkillsMatrix: React.FC = () => {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-12">
           
           {/* Tab buttons */}
-          <div className="flex flex-wrap gap-1.5 p-1 rounded-2xl bg-stone-100 border border-stone-200 w-full sm:w-auto">
+          <div className="flex flex-wrap gap-1.5 p-1 rounded-2xl bg-stone-100 border border-stone-200 w-full sm:w-auto overflow-x-auto">
             {['All', ...SKILL_CATEGORIES.map((c) => c.category)].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
                   activeTab === tab
                     ? 'bg-slate-900 text-white shadow-xs'
                     : 'text-slate-600 hover:text-slate-900 hover:bg-stone-200/60'
@@ -78,7 +78,7 @@ export const SkillsMatrix: React.FC = () => {
 
           {/* Search input */}
           <div className="relative w-full sm:w-72">
-            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 shrink-0" />
             <input
               type="text"
               value={searchTerm}
@@ -99,7 +99,7 @@ export const SkillsMatrix: React.FC = () => {
                 className="p-7 sm:p-9 rounded-3xl bg-white border border-stone-200 shadow-xs"
               >
                 <div className="flex items-center gap-3.5 mb-7">
-                  <div className="p-2.5 rounded-xl bg-stone-100 border border-stone-200 text-slate-800">
+                  <div className="p-2.5 rounded-xl bg-stone-100 border border-stone-200 text-slate-800 shrink-0">
                     <Icon className="w-5 h-5" />
                   </div>
                   <div>
@@ -115,14 +115,14 @@ export const SkillsMatrix: React.FC = () => {
                       className="p-4.5 rounded-2xl bg-stone-50/70 border border-stone-200 hover:border-stone-300 transition-all hover:bg-white group shadow-2xs"
                     >
                       <div className="flex items-center justify-between gap-2 mb-2">
-                        <span className="font-bold text-sm text-slate-900 group-hover:text-cyan-900 transition-colors">
+                        <span className="font-bold text-sm text-slate-900 group-hover:text-cyan-900 transition-colors text-balance">
                           {skill.name}
                         </span>
-                        <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-cyan-50 text-cyan-800 border border-cyan-200">
+                        <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-cyan-50 text-cyan-800 border border-cyan-200 whitespace-nowrap shrink-0">
                           {skill.level}
                         </span>
                       </div>
-                      <p className="text-xs text-slate-600 leading-relaxed flex items-start gap-1.5">
+                      <p className="text-xs text-slate-600 leading-relaxed flex items-start gap-1.5 text-pretty">
                         <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 mt-0.5 shrink-0" />
                         <span>{skill.context}</span>
                       </p>

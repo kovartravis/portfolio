@@ -26,19 +26,19 @@ export const MetricsRibbon: React.FC = () => {
                 className="group relative p-7 sm:p-8 rounded-2xl bg-white border border-stone-200/90 hover:border-stone-300 transition-all duration-300 hover:-translate-y-0.5 shadow-xs hover:shadow-md"
               >
                 <div className="flex items-start justify-between">
-                  <div className="text-3xl sm:text-4xl font-extrabold text-slate-950 font-mono tracking-tight">
+                  <div className="text-3xl sm:text-4xl font-extrabold text-slate-950 font-mono tracking-tight whitespace-nowrap">
                     {metric.value}
                   </div>
-                  <div className="p-2.5 rounded-xl bg-stone-100 text-slate-700 group-hover:text-cyan-800 group-hover:bg-cyan-50 transition-colors border border-stone-200">
+                  <div className="p-2.5 rounded-xl bg-stone-100 text-slate-700 group-hover:text-cyan-800 group-hover:bg-cyan-50 transition-colors border border-stone-200 shrink-0">
                     <Icon className="w-5 h-5" />
                   </div>
                 </div>
 
                 <div className="mt-4">
-                  <h3 className="text-base font-bold text-slate-900">
+                  <h3 className="text-base font-bold text-slate-900 text-balance">
                     {metric.label}
                   </h3>
-                  <p className="mt-1.5 text-xs text-slate-500 leading-relaxed">
+                  <p className="mt-1.5 text-xs text-slate-500 leading-relaxed text-pretty">
                     {metric.subtext}
                   </p>
                 </div>

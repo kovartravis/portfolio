@@ -87,20 +87,20 @@ export const ContactSection: React.FC = () => {
                 </span>
               </div>
               <div className="text-xs text-slate-500 font-medium">Direct Email</div>
-              <div className="text-sm sm:text-base font-bold text-slate-950 mt-1 break-all">
+              <div className="text-sm sm:text-base font-bold text-slate-950 mt-1 truncate">
                 {PERSONAL_INFO.email}
               </div>
-              <div className="mt-5 flex items-center gap-2.5">
+              <div className="mt-5 flex flex-wrap items-center gap-2.5">
                 <button
                   onClick={handleCopyEmail}
-                  className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold transition-all shadow-xs cursor-pointer"
+                  className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold transition-all shadow-xs cursor-pointer whitespace-nowrap"
                 >
-                  {copiedEmail ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+                  {copiedEmail ? <Check className="w-3.5 h-3.5 shrink-0" /> : <Copy className="w-3.5 h-3.5 shrink-0" />}
                   <span>{copiedEmail ? 'Copied!' : 'Copy Email'}</span>
                 </button>
                 <a
                   href={`mailto:${PERSONAL_INFO.email}`}
-                  className="px-3.5 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-slate-800 text-xs font-semibold transition-colors border border-stone-200"
+                  className="px-3.5 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-slate-800 text-xs font-semibold transition-colors border border-stone-200 whitespace-nowrap"
                 >
                   Open Mail App
                 </a>

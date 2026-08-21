@@ -71,23 +71,23 @@ ${EDUCATION_AND_CERTS.certification.title} — ${EDUCATION_AND_CERTS.certificati
           <div className="flex items-center gap-2">
             <button
               onClick={handlePrint}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-semibold transition-colors cursor-pointer"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold transition-colors cursor-pointer whitespace-nowrap shrink-0"
             >
-              <Printer className="w-3.5 h-3.5" />
+              <Printer className="w-3.5 h-3.5 shrink-0" />
               <span>Print / Save PDF</span>
             </button>
 
             <button
               onClick={handleCopyText}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition-colors border border-slate-700 cursor-pointer"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition-colors border border-slate-700 cursor-pointer whitespace-nowrap shrink-0"
             >
-              {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5 text-slate-400" />}
-              <span>{copied ? 'Copied Full Text!' : 'Copy Text'}</span>
+              {copied ? <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" /> : <Copy className="w-3.5 h-3.5 text-slate-400 shrink-0" />}
+              <span>{copied ? 'Copied!' : 'Copy Text'}</span>
             </button>
 
             <button
               onClick={onClose}
-              className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors cursor-pointer"
+              className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors cursor-pointer shrink-0"
             >
               <X className="w-5 h-5" />
             </button>
@@ -99,20 +99,20 @@ ${EDUCATION_AND_CERTS.certification.title} — ${EDUCATION_AND_CERTS.certificati
           
           {/* Header */}
           <div className="text-center border-b border-slate-200 pb-5">
-            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-950">
+            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-950 text-balance">
               {PERSONAL_INFO.name}
             </h1>
-            <p className="text-sm font-bold text-cyan-700 mt-1 uppercase tracking-wide">
+            <p className="text-sm font-bold text-slate-700 mt-1 uppercase tracking-wide">
               {PERSONAL_INFO.title}
             </p>
             <div className="mt-2 text-xs text-slate-600 flex flex-wrap items-center justify-center gap-3 font-medium">
-              <span>{PERSONAL_INFO.location}</span>
-              <span>·</span>
-              <span>{PERSONAL_INFO.phone}</span>
-              <span>·</span>
-              <span>{PERSONAL_INFO.email}</span>
-              <span>·</span>
-              <span>github.com/kovartravis/neuron</span>
+              <span className="whitespace-nowrap">{PERSONAL_INFO.location}</span>
+              <span className="hidden sm:inline">·</span>
+              <span className="whitespace-nowrap">{PERSONAL_INFO.phone}</span>
+              <span className="hidden sm:inline">·</span>
+              <span className="whitespace-nowrap">{PERSONAL_INFO.email}</span>
+              <span className="hidden sm:inline">·</span>
+              <span className="whitespace-nowrap">github.com/kovartravis/neuron</span>
             </div>
           </div>
 

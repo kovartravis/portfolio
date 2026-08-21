@@ -11,6 +11,12 @@
     font-family: var(--font-sans);
   }
 
+  * {
+    word-break: normal;
+    overflow-wrap: break-word;
+    hyphens: manual;
+  }
+
   body {
     background-color: #fafaf9;
     color: #0f172a;
@@ -18,6 +24,15 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+
+  p, li {
+    text-wrap: pretty;
   }
 
   ::selection {

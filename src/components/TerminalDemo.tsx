@@ -208,38 +208,41 @@ Cordova, TN | (512) 800-4209 | kovartravis@gmail.com
   return (
     <div className="w-full rounded-2xl border border-slate-800 bg-slate-900/90 shadow-2xl backdrop-blur-xl overflow-hidden font-mono text-sm">
       {/* Terminal Titlebar */}
-      <div className="flex items-center justify-between px-4 py-3 bg-slate-950/80 border-b border-slate-800/80 select-none">
-        <div className="flex items-center gap-2">
-          <div className="w-3 h-3 rounded-full bg-rose-500/80 inline-block" />
-          <div className="w-3 h-3 rounded-full bg-amber-500/80 inline-block" />
-          <div className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block" />
-          <span className="ml-2 text-xs font-medium text-slate-400 flex items-center gap-1.5">
-            <TerminalIcon className="w-3.5 h-3.5 text-cyan-400" />
-            neuron-interactive-agent-harness — bash
+      <div className="flex items-center justify-between px-4 py-3 bg-slate-950/80 border-b border-slate-800/80 select-none gap-2">
+        <div className="flex items-center gap-2 min-w-0">
+          <div className="flex items-center gap-1.5 shrink-0">
+            <div className="w-3 h-3 rounded-full bg-rose-500/80 inline-block" />
+            <div className="w-3 h-3 rounded-full bg-amber-500/80 inline-block" />
+            <div className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block" />
+          </div>
+          <span className="ml-1 text-xs font-medium text-slate-400 flex items-center gap-1.5 truncate">
+            <TerminalIcon className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+            <span className="truncate">neuron-harness — bash</span>
           </span>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 shrink-0">
           <button
             onClick={handleCopyInstall}
-            className="flex items-center gap-1.5 px-2.5 py-1 text-xs rounded-md bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors border border-slate-700/60 cursor-pointer"
+            className="flex items-center gap-1.5 px-2.5 py-1 text-xs rounded-md bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors border border-slate-700/60 cursor-pointer whitespace-nowrap"
             title="Copy npm install command"
           >
             {isCopied ? (
               <>
-                <Check className="w-3 h-3 text-emerald-400" />
+                <Check className="w-3 h-3 text-emerald-400 shrink-0" />
                 <span className="text-emerald-300 font-semibold">Copied!</span>
               </>
             ) : (
               <>
-                <Copy className="w-3 h-3 text-slate-400" />
-                <span>npm i @kovartravis/neuron</span>
+                <Copy className="w-3 h-3 text-slate-400 shrink-0" />
+                <span className="hidden sm:inline">npm i @kovartravis/neuron</span>
+                <span className="sm:hidden">npm i</span>
               </>
             )}
           </button>
           <button
             onClick={handleReset}
-            className="p-1 text-slate-400 hover:text-slate-200 transition-colors rounded hover:bg-slate-800 cursor-pointer"
+            className="p-1 text-slate-400 hover:text-slate-200 transition-colors rounded hover:bg-slate-800 cursor-pointer shrink-0"
             title="Reset terminal"
           >
             <RotateCcw className="w-3.5 h-3.5" />

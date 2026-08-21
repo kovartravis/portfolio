@@ -56,13 +56,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
             </div>
           </div>
           <div>
-            <div className="font-bold text-slate-900 group-hover:text-cyan-700 transition-colors flex items-center gap-2 text-sm sm:text-base">
+            <div className="font-bold text-slate-900 group-hover:text-cyan-700 transition-colors flex items-center gap-2 text-sm sm:text-base whitespace-nowrap">
               <span>{PERSONAL_INFO.name}</span>
-              <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+              <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 shrink-0">
                 Staff SWE
               </span>
             </div>
-            <p className="text-xs text-slate-500 hidden sm:block">
+            <p className="text-xs text-slate-500 hidden sm:block whitespace-nowrap">
               AI Systems & Full-Stack
             </p>
           </div>
@@ -76,9 +76,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
               <a
                 key={link.name}
                 href={link.href}
-                className="flex items-center gap-1.5 px-3 py-1 text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-stone-100 rounded-full transition-colors"
+                className="flex items-center gap-1.5 px-3 py-1 text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-stone-100 rounded-full transition-colors whitespace-nowrap"
               >
-                <Icon className="w-3.5 h-3.5 text-slate-400" />
+                <Icon className="w-3.5 h-3.5 text-slate-400 shrink-0" />
                 <span>{link.name}</span>
               </a>
             );
@@ -91,7 +91,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
             href={PERSONAL_INFO.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 text-slate-500 hover:text-slate-900 hover:bg-white rounded-lg transition-colors border border-stone-200 shadow-xs"
+            className="p-2 text-slate-500 hover:text-slate-900 hover:bg-white rounded-lg transition-colors border border-stone-200 shadow-xs shrink-0"
             title="GitHub Profile"
           >
             <GithubIcon className="w-4 h-4" />
@@ -99,15 +99,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
 
           <button
             onClick={onOpenResumeModal}
-            className="flex items-center gap-2 px-3.5 py-2 text-xs font-semibold rounded-lg bg-white hover:bg-stone-50 text-slate-700 hover:text-slate-900 border border-stone-200 transition-all shadow-xs cursor-pointer"
+            className="flex items-center gap-2 px-3.5 py-2 text-xs font-semibold rounded-lg bg-white hover:bg-stone-50 text-slate-700 hover:text-slate-900 border border-stone-200 transition-all shadow-xs cursor-pointer whitespace-nowrap shrink-0"
           >
-            <FileText className="w-3.5 h-3.5 text-cyan-600" />
+            <FileText className="w-3.5 h-3.5 text-cyan-600 shrink-0" />
             <span>Resume & PDF</span>
           </button>
 
           <a
             href="#contact"
-            className="flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-lg bg-slate-900 hover:bg-slate-800 text-white transition-all shadow-xs hover:shadow-md"
+            className="flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-lg bg-slate-900 hover:bg-slate-800 text-white transition-all shadow-xs hover:shadow-md whitespace-nowrap shrink-0"
           >
             <span>Let's Talk</span>
           </a>

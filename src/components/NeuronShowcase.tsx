@@ -84,13 +84,13 @@ export default {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-bold uppercase tracking-wider mb-3">
-              <Sparkles className="w-3.5 h-3.5" /> Featured Open Source System
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-bold uppercase tracking-wider mb-3 whitespace-nowrap">
+              <Sparkles className="w-3.5 h-3.5 shrink-0" /> Featured Open Source System
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight text-balance">
               Neuron — Persistent Memory for AI Coding Agents
             </h2>
-            <p className="mt-3 text-slate-600 max-w-2xl text-sm sm:text-base leading-relaxed">
+            <p className="mt-3 text-slate-600 max-w-2xl text-sm sm:text-base leading-relaxed text-pretty">
               {NEURON_PROJECT.description}
             </p>
           </div>
@@ -101,18 +101,18 @@ export default {
               href={NEURON_PROJECT.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white hover:bg-stone-50 text-slate-800 border border-stone-200 text-xs sm:text-sm font-semibold transition-all shadow-xs"
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white hover:bg-stone-50 text-slate-800 border border-stone-200 text-xs sm:text-sm font-semibold transition-all shadow-xs whitespace-nowrap"
             >
-              <GithubIcon className="w-4 h-4 text-slate-900" />
+              <GithubIcon className="w-4 h-4 text-slate-900 shrink-0" />
               <span>github.com/kovartravis/neuron</span>
-              <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
+              <ExternalLink className="w-3.5 h-3.5 text-slate-400 shrink-0" />
             </a>
 
             <button
               onClick={handleCopy}
-              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-cyan-50 hover:bg-cyan-100/80 border border-cyan-200 text-cyan-900 text-xs sm:text-sm font-mono font-medium transition-all shadow-xs cursor-pointer"
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-cyan-50 hover:bg-cyan-100/80 border border-cyan-200 text-cyan-900 text-xs sm:text-sm font-mono font-medium transition-all shadow-xs cursor-pointer whitespace-nowrap"
             >
-              {copiedCmd ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4 text-cyan-700" />}
+              {copiedCmd ? <Check className="w-4 h-4 text-emerald-600 shrink-0" /> : <Copy className="w-4 h-4 text-cyan-700 shrink-0" />}
               <span>npm i -g @kovartravis/neuron</span>
             </button>
           </div>
@@ -121,24 +121,24 @@ export default {
         {/* Stats Row */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 mb-14">
           <div className="p-5 rounded-2xl bg-white border border-stone-200 shadow-xs">
-            <div className="text-xs text-slate-500 font-medium">Weekly Downloads</div>
-            <div className="text-2xl sm:text-3xl font-extrabold text-slate-950 font-mono mt-1">~1,600+</div>
-            <div className="text-[11px] text-slate-400 mt-0.5">Active npm ecosystem</div>
+            <div className="text-xs text-slate-500 font-medium whitespace-nowrap">Weekly Downloads</div>
+            <div className="text-2xl sm:text-3xl font-extrabold text-slate-950 font-mono mt-1 whitespace-nowrap">~1,600+</div>
+            <div className="text-[11px] text-slate-400 mt-0.5 whitespace-nowrap">Active npm ecosystem</div>
           </div>
           <div className="p-5 rounded-2xl bg-white border border-stone-200 shadow-xs">
-            <div className="text-xs text-slate-500 font-medium">Releases</div>
-            <div className="text-2xl sm:text-3xl font-extrabold text-slate-950 font-mono mt-1">40+ Versions</div>
-            <div className="text-[11px] text-slate-400 mt-0.5">Actively maintained</div>
+            <div className="text-xs text-slate-500 font-medium whitespace-nowrap">Releases</div>
+            <div className="text-2xl sm:text-3xl font-extrabold text-slate-950 font-mono mt-1 whitespace-nowrap">40+ Versions</div>
+            <div className="text-[11px] text-slate-400 mt-0.5 whitespace-nowrap">Actively maintained</div>
           </div>
           <div className="p-5 rounded-2xl bg-white border border-stone-200 shadow-xs">
-            <div className="text-xs text-slate-500 font-medium">License</div>
-            <div className="text-2xl sm:text-3xl font-extrabold text-slate-950 font-mono mt-1">MIT</div>
-            <div className="text-[11px] text-slate-400 mt-0.5">Open source & free</div>
+            <div className="text-xs text-slate-500 font-medium whitespace-nowrap">License</div>
+            <div className="text-2xl sm:text-3xl font-extrabold text-slate-950 font-mono mt-1 whitespace-nowrap">MIT</div>
+            <div className="text-[11px] text-slate-400 mt-0.5 whitespace-nowrap">Open source & free</div>
           </div>
           <div className="p-5 rounded-2xl bg-white border border-stone-200 shadow-xs">
-            <div className="text-xs text-slate-500 font-medium">Storage Engine</div>
-            <div className="text-2xl sm:text-3xl font-extrabold text-slate-950 font-mono mt-1">Git Markdown</div>
-            <div className="text-[11px] text-slate-400 mt-0.5">Zero opaque lock-in</div>
+            <div className="text-xs text-slate-500 font-medium whitespace-nowrap">Storage Engine</div>
+            <div className="text-2xl sm:text-3xl font-extrabold text-slate-950 font-mono mt-1 whitespace-nowrap">Git Markdown</div>
+            <div className="text-[11px] text-slate-400 mt-0.5 whitespace-nowrap">Zero opaque lock-in</div>
           </div>
         </div>
 
