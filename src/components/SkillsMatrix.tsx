@@ -40,35 +40,35 @@ export const SkillsMatrix: React.FC = () => {
   }).filter((cat) => cat.skills.length > 0);
 
   return (
-    <section id="skills" className="py-20 bg-slate-950 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="py-24 sm:py-32 bg-[#fafaf9] relative">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-800 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-3">
+        <div className="text-center max-w-2xl mx-auto mb-14">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-bold uppercase tracking-wider mb-3">
             <Cpu className="w-3.5 h-3.5" /> Technical Expertise & Stack
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight">
             Skills & Architectural Capabilities
           </h2>
-          <p className="mt-3 text-slate-400 text-base">
+          <p className="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed">
             Every skill backed by real production workload experience and measured business impact.
           </p>
         </div>
 
         {/* Filters & Search */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-10">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-12">
           
           {/* Tab buttons */}
-          <div className="flex flex-wrap gap-1.5 p-1 rounded-2xl bg-slate-900/90 border border-slate-800 w-full sm:w-auto">
+          <div className="flex flex-wrap gap-1.5 p-1 rounded-2xl bg-stone-100 border border-stone-200 w-full sm:w-auto">
             {['All', ...SKILL_CATEGORIES.map((c) => c.category)].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
                   activeTab === tab
-                    ? 'bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20'
-                    : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
+                    ? 'bg-slate-900 text-white shadow-xs'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-stone-200/60'
                 }`}
               >
                 {tab}
@@ -78,52 +78,52 @@ export const SkillsMatrix: React.FC = () => {
 
           {/* Search input */}
           <div className="relative w-full sm:w-72">
-            <Search className="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Search skill, ML, React, C#..."
-              className="w-full bg-slate-900 border border-slate-800 rounded-xl pl-9 pr-4 py-2 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyan-500/50"
+              className="w-full bg-white border border-stone-200 rounded-xl pl-9 pr-4 py-2 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-cyan-600 shadow-xs"
             />
           </div>
         </div>
 
         {/* Categories & Skills Display */}
-        <div className="space-y-8">
+        <div className="space-y-10">
           {filteredCategories.map((cat) => {
             const Icon = CATEGORY_ICONS[cat.category] || Code;
             return (
               <div
                 key={cat.category}
-                className="p-6 sm:p-8 rounded-3xl bg-slate-900/50 border border-slate-800/80 backdrop-blur-sm"
+                className="p-7 sm:p-9 rounded-3xl bg-white border border-stone-200 shadow-xs"
               >
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="p-2.5 rounded-xl bg-cyan-950/60 border border-cyan-800 text-cyan-400">
+                <div className="flex items-center gap-3.5 mb-7">
+                  <div className="p-2.5 rounded-xl bg-stone-100 border border-stone-200 text-slate-800">
                     <Icon className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white">{cat.category}</h3>
-                    <p className="text-xs text-slate-400">{cat.description}</p>
+                    <h3 className="text-xl font-bold text-slate-950">{cat.category}</h3>
+                    <p className="text-xs text-slate-500">{cat.description}</p>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                   {cat.skills.map((skill) => (
                     <div
                       key={skill.name}
-                      className="p-4 rounded-2xl bg-slate-950/70 border border-slate-800/80 hover:border-slate-700 transition-all hover:bg-slate-950 group"
+                      className="p-4.5 rounded-2xl bg-stone-50/70 border border-stone-200 hover:border-stone-300 transition-all hover:bg-white group shadow-2xs"
                     >
                       <div className="flex items-center justify-between gap-2 mb-2">
-                        <span className="font-bold text-sm text-slate-200 group-hover:text-cyan-300 transition-colors">
+                        <span className="font-bold text-sm text-slate-900 group-hover:text-cyan-900 transition-colors">
                           {skill.name}
                         </span>
-                        <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-cyan-950/50 text-cyan-300 border border-cyan-800/50">
+                        <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-cyan-50 text-cyan-800 border border-cyan-200">
                           {skill.level}
                         </span>
                       </div>
-                      <p className="text-xs text-slate-400 leading-relaxed flex items-start gap-1.5">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 mt-0.5 shrink-0" />
+                      <p className="text-xs text-slate-600 leading-relaxed flex items-start gap-1.5">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 mt-0.5 shrink-0" />
                         <span>{skill.context}</span>
                       </p>
                     </div>

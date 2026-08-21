@@ -37,61 +37,57 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResumeModal }) => {
   };
 
   return (
-    <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
-      {/* Background Ambient Glows */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[800px] h-[350px] bg-gradient-to-tr from-cyan-500/15 via-indigo-600/15 to-purple-600/10 blur-[130px] rounded-full pointer-events-none -z-10" />
-      <div className="absolute top-10 right-10 w-72 h-72 bg-blue-500/10 blur-[90px] rounded-full pointer-events-none -z-10" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
           
           {/* Left Column: Staff Positioning & Thesis */}
-          <div className="lg:col-span-6 space-y-6 text-left">
+          <div className="lg:col-span-6 space-y-7 text-left">
             {/* Status Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/90 border border-slate-800 backdrop-blur-md shadow-inner">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-stone-200/90 shadow-xs">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
-              <span className="text-xs font-medium text-slate-300">
+              <span className="text-xs font-semibold text-slate-700">
                 Staff Software Engineer · AI Systems & Full-Stack
               </span>
             </div>
 
             {/* Main Name & Headline */}
-            <div className="space-y-2">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white">
-                Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400">{PERSONAL_INFO.name}</span>
+            <div className="space-y-3">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-950 leading-[1.1]">
+                Hi, I'm <span className="text-slate-950 underline decoration-cyan-500/40 decoration-4 underline-offset-8">{PERSONAL_INFO.name}</span>
               </h1>
-              <p className="text-xl sm:text-2xl font-semibold text-slate-300">
-                I build and ship production AI agents, custom ML pipelines, and high-scale platforms.
+              <p className="text-lg sm:text-xl font-medium text-slate-600 leading-relaxed pt-1">
+                I build and ship production AI agents, custom ML pipelines, and high-scale enterprise platforms.
               </p>
             </div>
 
             {/* Core Philosophy / Summary Quote */}
-            <div className="relative pl-4 border-l-2 border-cyan-500/60 bg-gradient-to-r from-cyan-950/20 to-transparent p-3 rounded-r-lg">
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+            <div className="relative pl-5 border-l-2 border-slate-900 bg-white/60 p-4 rounded-r-xl border border-stone-200/60 shadow-xs">
+              <p className="text-sm sm:text-base text-slate-700 leading-relaxed italic">
                 "I go looking for the problem worth solving rather than waiting to be assigned one, and I'd rather ship something real than write a plan about shipping it."
               </p>
             </div>
 
             {/* Key Quick Badges */}
-            <div className="flex flex-wrap gap-2 pt-1 text-xs">
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-slate-900 border border-slate-800 text-slate-300">
-                <Bot className="w-3.5 h-3.5 text-cyan-400" />
+            <div className="flex flex-wrap gap-2 text-xs">
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-stone-200 text-slate-700 shadow-xs">
+                <Bot className="w-3.5 h-3.5 text-cyan-600" />
                 <span>Production AI Agents</span>
               </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-slate-900 border border-slate-800 text-slate-300">
-                <Zap className="w-3.5 h-3.5 text-amber-400" />
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-stone-200 text-slate-700 shadow-xs">
+                <Zap className="w-3.5 h-3.5 text-amber-600" />
                 <span>Amazon Comprehend ML</span>
               </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-slate-900 border border-slate-800 text-slate-300">
-                <Code2 className="w-3.5 h-3.5 text-purple-400" />
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-stone-200 text-slate-700 shadow-xs">
+                <Code2 className="w-3.5 h-3.5 text-indigo-600" />
                 <span>React · TypeScript · C# .NET</span>
               </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-slate-900 border border-slate-800 text-slate-300">
-                <TerminalIcon className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Creator of Neuron (~1.6k/wk npm)</span>
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-stone-200 text-slate-700 shadow-xs">
+                <TerminalIcon className="w-3.5 h-3.5 text-emerald-600" />
+                <span>Neuron (~1.6k/wk npm)</span>
               </div>
             </div>
 
@@ -99,7 +95,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResumeModal }) => {
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <a
                 href="#neuron"
-                className="flex items-center gap-2 px-5 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all cursor-pointer"
+                className="flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm shadow-sm hover:shadow-md transition-all cursor-pointer"
               >
                 <span>Explore Neuron Project</span>
                 <ArrowRight className="w-4 h-4" />
@@ -107,57 +103,57 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResumeModal }) => {
 
               <a
                 href="#experience"
-                className="flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 hover:text-white border border-slate-800 text-sm font-semibold transition-all cursor-pointer"
+                className="flex items-center gap-2 px-5 py-3 rounded-xl bg-white hover:bg-stone-50 text-slate-800 border border-stone-200 text-sm font-semibold transition-all shadow-xs cursor-pointer"
               >
-                <span>View St. Jude Experience</span>
+                <span>View Experience</span>
               </a>
 
               <button
                 onClick={onOpenResumeModal}
-                className="flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-900/60 hover:bg-slate-800/80 text-slate-300 hover:text-white border border-slate-800 text-sm transition-all cursor-pointer"
+                className="flex items-center gap-2 px-4 py-3 rounded-xl bg-stone-100 hover:bg-stone-200/80 text-slate-700 hover:text-slate-900 border border-stone-200 text-sm font-medium transition-all cursor-pointer"
               >
-                <span>Full Resume PDF</span>
+                <span>Full Resume</span>
               </button>
             </div>
 
             {/* Direct Contact Bar with Quick Copy */}
-            <div className="pt-4 border-t border-slate-800/80 flex flex-wrap items-center gap-4 text-xs text-slate-400">
+            <div className="pt-5 border-t border-stone-200 flex flex-wrap items-center gap-4 text-xs text-slate-500">
               <div className="flex items-center gap-1.5">
-                <MapPin className="w-3.5 h-3.5 text-slate-500" />
+                <MapPin className="w-3.5 h-3.5 text-slate-400" />
                 <span>{PERSONAL_INFO.location}</span>
               </div>
 
               {/* Copy Email Pill */}
               <button
                 onClick={handleCopyEmail}
-                className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-cyan-400 transition-colors cursor-pointer"
+                className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white hover:bg-stone-50 border border-stone-200 text-slate-700 hover:text-slate-900 transition-colors shadow-xs cursor-pointer"
                 title="Click to copy email address"
               >
-                <Mail className="w-3.5 h-3.5 text-cyan-400" />
+                <Mail className="w-3.5 h-3.5 text-cyan-600" />
                 <span>{PERSONAL_INFO.email}</span>
                 {copiedEmail ? (
-                  <span className="text-emerald-400 font-semibold text-[11px] flex items-center gap-1">
+                  <span className="text-emerald-600 font-semibold text-[11px] flex items-center gap-1">
                     <Check className="w-3 h-3" /> Copied!
                   </span>
                 ) : (
-                  <Copy className="w-3 h-3 text-slate-500" />
+                  <Copy className="w-3 h-3 text-slate-400" />
                 )}
               </button>
 
               {/* Copy Phone Pill */}
               <button
                 onClick={handleCopyPhone}
-                className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-cyan-400 transition-colors cursor-pointer"
+                className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white hover:bg-stone-50 border border-stone-200 text-slate-700 hover:text-slate-900 transition-colors shadow-xs cursor-pointer"
                 title="Click to copy phone number"
               >
-                <Phone className="w-3.5 h-3.5 text-emerald-400" />
+                <Phone className="w-3.5 h-3.5 text-emerald-600" />
                 <span>{PERSONAL_INFO.phone}</span>
                 {copiedPhone ? (
-                  <span className="text-emerald-400 font-semibold text-[11px] flex items-center gap-1">
+                  <span className="text-emerald-600 font-semibold text-[11px] flex items-center gap-1">
                     <Check className="w-3 h-3" /> Copied!
                   </span>
                 ) : (
-                  <Copy className="w-3 h-3 text-slate-500" />
+                  <Copy className="w-3 h-3 text-slate-400" />
                 )}
               </button>
 
@@ -165,9 +161,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResumeModal }) => {
                 href={PERSONAL_INFO.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 hover:text-slate-200 transition-colors"
+                className="flex items-center gap-1.5 hover:text-slate-900 transition-colors"
               >
-                <GithubIcon className="w-3.5 h-3.5 text-slate-400" />
+                <GithubIcon className="w-3.5 h-3.5 text-slate-600" />
                 <span>github.com/kovartravis</span>
               </a>
             </div>
@@ -177,18 +173,18 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResumeModal }) => {
           <div className="lg:col-span-6">
             <div className="relative">
               {/* Highlight badge above terminal */}
-              <div className="flex items-center justify-between mb-2 px-1">
-                <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5 text-cyan-400" /> Interactive AI Memory Simulator
+              <div className="flex items-center justify-between mb-2.5 px-1">
+                <span className="text-xs font-bold text-slate-600 uppercase tracking-wider flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-cyan-600" /> Interactive AI Memory Simulator
                 </span>
-                <span className="text-xs text-slate-500 font-mono">Live Demo</span>
+                <span className="text-xs text-slate-400 font-mono">Live Demo</span>
               </div>
 
               {/* Terminal Container */}
               <TerminalDemo />
               
-              <div className="mt-2 text-center text-xs text-slate-500">
-                Interactive preview of <span className="text-cyan-400 font-medium">Neuron</span> — persistent schema-enforced memory for coding agents.
+              <div className="mt-3 text-center text-xs text-slate-500">
+                Interactive preview of <span className="text-slate-900 font-semibold">Neuron</span> — persistent schema-enforced memory for coding agents.
               </div>
             </div>
           </div>

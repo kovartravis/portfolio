@@ -40,45 +40,45 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-slate-950/85 backdrop-blur-md border-b border-slate-800/80 shadow-lg shadow-black/40 py-3'
-          : 'bg-transparent py-5'
+          ? 'bg-[#fafaf9]/90 backdrop-blur-md border-b border-stone-200 shadow-xs py-3.5'
+          : 'bg-transparent py-6'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand / Logo */}
         <a
           href="#"
           className="flex items-center gap-3 group focus:outline-none"
         >
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-indigo-500 to-purple-500 p-[1.5px] shadow-md shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition-all">
-            <div className="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center font-mono font-bold text-cyan-400 text-lg group-hover:scale-105 transition-transform">
+          <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-slate-900 via-slate-800 to-slate-700 p-[1px] shadow-xs group-hover:shadow-md transition-all">
+            <div className="w-full h-full bg-white rounded-[11px] flex items-center justify-center font-mono font-bold text-slate-900 text-sm group-hover:scale-105 transition-transform">
               TK
             </div>
           </div>
           <div>
-            <div className="font-bold text-slate-100 group-hover:text-cyan-400 transition-colors flex items-center gap-2">
+            <div className="font-bold text-slate-900 group-hover:text-cyan-700 transition-colors flex items-center gap-2 text-sm sm:text-base">
               <span>{PERSONAL_INFO.name}</span>
-              <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+              <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
                 Staff SWE
               </span>
             </div>
-            <p className="text-xs text-slate-400 hidden sm:block">
+            <p className="text-xs text-slate-500 hidden sm:block">
               AI Systems & Full-Stack
             </p>
           </div>
         </a>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-1 bg-slate-900/60 border border-slate-800/80 rounded-full px-4 py-1.5 backdrop-blur-md">
+        <nav className="hidden lg:flex items-center gap-1 bg-white/80 border border-stone-200/90 rounded-full px-4 py-1.5 shadow-xs backdrop-blur-sm">
           {navLinks.map((link) => {
             const Icon = link.icon;
             return (
               <a
                 key={link.name}
                 href={link.href}
-                className="flex items-center gap-1.5 px-3 py-1 text-sm font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800/60 rounded-full transition-colors"
+                className="flex items-center gap-1.5 px-3 py-1 text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-stone-100 rounded-full transition-colors"
               >
-                <Icon className="w-4 h-4 text-slate-400" />
+                <Icon className="w-3.5 h-3.5 text-slate-400" />
                 <span>{link.name}</span>
               </a>
             );
@@ -91,7 +91,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
             href={PERSONAL_INFO.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 text-slate-400 hover:text-slate-100 hover:bg-slate-800/80 rounded-lg transition-colors border border-slate-800"
+            className="p-2 text-slate-500 hover:text-slate-900 hover:bg-white rounded-lg transition-colors border border-stone-200 shadow-xs"
             title="GitHub Profile"
           >
             <GithubIcon className="w-4 h-4" />
@@ -99,15 +99,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
 
           <button
             onClick={onOpenResumeModal}
-            className="flex items-center gap-2 px-3.5 py-2 text-xs font-semibold rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white border border-slate-700 transition-all shadow-sm hover:shadow-cyan-500/10 cursor-pointer"
+            className="flex items-center gap-2 px-3.5 py-2 text-xs font-semibold rounded-lg bg-white hover:bg-stone-50 text-slate-700 hover:text-slate-900 border border-stone-200 transition-all shadow-xs cursor-pointer"
           >
-            <FileText className="w-3.5 h-3.5 text-cyan-400" />
+            <FileText className="w-3.5 h-3.5 text-cyan-600" />
             <span>Resume & PDF</span>
           </button>
 
           <a
             href="#contact"
-            className="flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold transition-all shadow-md shadow-cyan-500/25 hover:shadow-cyan-500/40"
+            className="flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-lg bg-slate-900 hover:bg-slate-800 text-white transition-all shadow-xs hover:shadow-md"
           >
             <span>Let's Talk</span>
           </a>
@@ -116,7 +116,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 text-slate-400 hover:text-slate-200 hover:bg-slate-800/80 rounded-lg transition-colors border border-slate-800"
+          className="lg:hidden p-2 text-slate-600 hover:text-slate-900 hover:bg-white rounded-lg transition-colors border border-stone-200"
         >
           {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
@@ -124,7 +124,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-slate-950/95 border-b border-slate-800 px-4 pt-3 pb-6 space-y-3 mt-2 shadow-2xl backdrop-blur-xl">
+        <div className="lg:hidden bg-[#fafaf9]/98 border-b border-stone-200 px-4 pt-3 pb-6 space-y-3 mt-2 shadow-xl backdrop-blur-xl">
           <div className="flex flex-col space-y-1">
             {navLinks.map((link) => {
               const Icon = link.icon;
@@ -133,30 +133,30 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-slate-200 hover:text-cyan-400 hover:bg-slate-900 rounded-lg transition-colors"
+                  className="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-slate-700 hover:text-slate-900 hover:bg-white rounded-lg transition-colors"
                 >
-                  <Icon className="w-4 h-4 text-cyan-400" />
+                  <Icon className="w-4 h-4 text-cyan-600" />
                   <span>{link.name}</span>
                 </a>
               );
             })}
           </div>
 
-          <div className="pt-3 border-t border-slate-800 flex flex-col gap-2">
+          <div className="pt-3 border-t border-stone-200 flex flex-col gap-2">
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
                 onOpenResumeModal();
               }}
-              className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-slate-800 text-slate-200 font-semibold text-sm border border-slate-700"
+              className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-white text-slate-800 font-semibold text-sm border border-stone-200 shadow-xs"
             >
-              <FileText className="w-4 h-4 text-cyan-400" />
+              <FileText className="w-4 h-4 text-cyan-600" />
               <span>View & Print Resume</span>
             </button>
             <a
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm"
+              className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm"
             >
               <span>Get in Touch</span>
             </a>
