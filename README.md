@@ -8,14 +8,15 @@ Built with **React 19**, **TypeScript**, **Vite**, and **Tailwind CSS v4**.
 
 ## ⚡ Features
 
-- **Hero & Senior-to-Staff Positioning:** Direct summary of production AI agents, Amazon Comprehend ML pipelines, and enterprise platform leadership.
-- **Guided AI Memory Showcase (Neuron):** Interactive 4-step architectural walkthrough of the schema-enforced, git-diffable markdown memory harness used by AI coding agents (`Claude Code`, `Cursor`, `Codex CLI`, `Copilot CLI`).
-- **Open-Source Spotlight (`Neuron`):** Architecture breakdown comparing opaque vector DBs against git-diffable schema-enforced markdown, with live npm download stats (~1,600+/wk) and 40+ published releases.
-- **Experience Timeline:** Detailed architectural case studies for ALSAC / St. Jude Children's Research Hospital, TruckPro, and American Home Shield.
-- **Production Metrics Ribbon:** Quantitative impact counters (3,000+ docs/mo automated, 50+ hrs/mo saved, 200+ peak concurrent users, 2,000+ support tickets killed).
-- **Interactive Skill Matrix:** Filterable by *AI & ML Systems*, *Full-Stack & Frontend*, *Backend & Distributed Systems*, and *Architecture & Leadership*, with real production context for each skill.
-- **ATS-Friendly Resume Preview & Print:** Formatted 1-click printable resume (`window.print()`) and raw text copy with confetti animations.
-- **Direct Contact & Mailer Integration:** Instant email/phone copy with toast feedback, mailto integration, and GitHub links.
+A single-column, headline-first page built to be read in one scroll on any screen size — no heavy animation, background effects, or interactive widgets standing between the reader and the content.
+
+- **Hero:** Name, title, and a short summary, with contact info directly below the fold.
+- **Experience:** Chronological history for ALSAC / St. Jude Children's Research Hospital, TruckPro, and American Home Shield, each with plain-text highlights and metrics.
+- **Projects (`Neuron`):** A concise summary of the open-source persistent memory engine for AI coding agents, with links to GitHub and npm.
+- **Skills:** Grouped by *AI & ML Systems*, *Full-Stack & Frontend*, *Backend & Distributed Systems*, and *Architecture & Leadership*.
+- **Education & Certifications.**
+- **ATS-Friendly Resume Preview & Print:** Formatted 1-click printable resume (`window.print()`) and raw text copy.
+- **Direct Contact:** Email/phone/GitHub links with click-to-copy.
 
 ---
 

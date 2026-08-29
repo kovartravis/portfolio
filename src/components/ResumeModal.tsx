@@ -8,7 +8,6 @@ import {
   FileText 
 } from 'lucide-react';
 import { PERSONAL_INFO, EXPERIENCES, NEURON_PROJECT, EDUCATION_AND_CERTS, SKILL_CATEGORIES } from '../data/resumeData';
-import confetti from 'canvas-confetti';
 
 interface ResumeModalProps {
   isOpen: boolean;
@@ -72,7 +71,6 @@ ${EDUCATION_AND_CERTS.certification.title} — ${EDUCATION_AND_CERTS.certificati
 
     navigator.clipboard.writeText(rawResume);
     setCopied(true);
-    confetti({ particleCount: 50, spread: 60, origin: { y: 0.6 } });
     setTimeout(() => setCopied(false), 2000);
   };
 

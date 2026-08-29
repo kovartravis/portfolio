@@ -64,45 +64,6 @@ export const PERSONAL_INFO = {
     "Software engineer who builds and ships — from production AI agents to full-stack platforms used by hundreds of people. I've built internal libraries and project templates that other engineering teams picked up on their own, and I informally lead a group of 8 engineers without needing a title to do it. I go looking for the problem worth solving rather than waiting to be assigned one, and I'd rather ship something real than write a plan about shipping it.",
 };
 
-export const KEY_METRICS = [
-  {
-    value: "3,000+",
-    label: "Docs / Month Automated",
-    subtext: "Manual document processing cut to zero with custom ML",
-    color: "from-cyan-400 to-blue-500",
-  },
-  {
-    value: "50+ hrs",
-    label: "Saved Every Month",
-    subtext: "Recovered via automated Comprehend ML pipeline",
-    color: "from-emerald-400 to-teal-500",
-  },
-  {
-    value: "2,000+",
-    label: "Support Tickets Eliminated",
-    subtext: "By designing the greenfield Event Experiences platform",
-    color: "from-violet-400 to-purple-500",
-  },
-  {
-    value: "1,600+",
-    label: "Weekly npm Downloads",
-    subtext: "Neuron AI agent persistent memory engine (40+ releases)",
-    color: "from-amber-400 to-orange-500",
-  },
-  {
-    value: "8",
-    label: "Engineers Mentored / Led",
-    subtext: "Informal technical leadership across cross-functional teams",
-    color: "from-pink-400 to-rose-500",
-  },
-  {
-    value: "100s",
-    label: "Engineers Using Shared Libs",
-    subtext: "Internal tools and templates adopted organically company-wide",
-    color: "from-indigo-400 to-cyan-400",
-  },
-];
-
 export const NEURON_PROJECT: ProjectItem = {
   name: "Neuron",
   tagline: "Persistent Memory System for AI Coding Agents",
