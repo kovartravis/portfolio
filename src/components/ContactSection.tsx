@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Copy, Check } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/resumeData';
-import { GithubIcon } from './Icons';
+import { SocialLinks } from './SocialLinks';
 
 export const ContactSection: React.FC = () => {
   const [copiedEmail, setCopiedEmail] = useState(false);
@@ -18,9 +18,14 @@ export const ContactSection: React.FC = () => {
         <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight">
           Contact
         </h2>
-        <p className="mt-3 text-sm text-slate-600 max-w-xl">
-          Open to senior / staff-track engineering roles in AI systems, platform architecture, or open-source collaboration.
-        </p>
+
+        <div className="mt-6">
+          <SocialLinks
+            showLabels
+            className="flex flex-col gap-3"
+            linkClassName="flex items-center gap-2 text-sm text-slate-700 hover:text-slate-900 transition-colors w-fit"
+          />
+        </div>
 
         <div className="mt-6 space-y-3 text-sm">
           <a
@@ -40,26 +45,16 @@ export const ContactSection: React.FC = () => {
 
           <a
             href={`tel:${PERSONAL_INFO.phone.replace(/[^\d+]/g, '')}`}
-            className="flex items-center gap-2 text-slate-700 hover:text-slate-900 transition-colors w-fit"
+            className="flex items-center gap-2 text-slate-500 hover:text-slate-900 transition-colors w-fit"
           >
             <Phone className="w-4 h-4 text-slate-400 shrink-0" />
             {PERSONAL_INFO.phone}
           </a>
 
-          <div className="flex items-center gap-2 text-slate-700">
+          <div className="flex items-center gap-2 text-slate-500">
             <MapPin className="w-4 h-4 text-slate-400 shrink-0" />
             {PERSONAL_INFO.location}
           </div>
-
-          <a
-            href={PERSONAL_INFO.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-slate-700 hover:text-slate-900 transition-colors w-fit"
-          >
-            <GithubIcon className="w-4 h-4 text-slate-400 shrink-0" />
-            github.com/kovartravis
-          </a>
         </div>
       </div>
     </section>

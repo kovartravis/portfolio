@@ -47,6 +47,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
     const rawResume = `TRAVIS KOVAR
 ${PERSONAL_INFO.title}
 Cordova, TN · ${PERSONAL_INFO.phone} · ${PERSONAL_INFO.email} · github.com/kovartravis
+linkedin.com/in/travis-kovar-0a1929147 · x.com/kovartravis
 
 SUMMARY
 ${PERSONAL_INFO.summary}
@@ -60,14 +61,16 @@ ${e.highlights.map(h => `• ${h.description}`).join('\n')}`).join('\n\n')}
 PROJECTS
 ${NEURON_PROJECT.name} | ${NEURON_PROJECT.license} | ${NEURON_PROJECT.githubUrl}
 • ${NEURON_PROJECT.description}
-• ${NEURON_PROJECT.stats.downloads}; ${NEURON_PROJECT.stats.releases}
+• ${NEURON_PROJECT.stats.releases}
+
+Tripkit | travel MCP for personal agents (in progress) | https://github.com/kovartravis/tripkit
 
 SKILLS
 ${SKILL_CATEGORIES.map(c => `${c.category}: ${c.skills.map(s => s.name).join(', ')}`).join('\n')}
 
 EDUCATION & CERTIFICATIONS
-${EDUCATION_AND_CERTS.education.degree} — ${EDUCATION_AND_CERTS.education.institution}, ${EDUCATION_AND_CERTS.education.period}
-${EDUCATION_AND_CERTS.certification.title} — ${EDUCATION_AND_CERTS.certification.issuer}`;
+${EDUCATION_AND_CERTS.education.degree}, ${EDUCATION_AND_CERTS.education.institution}, ${EDUCATION_AND_CERTS.education.period}
+${EDUCATION_AND_CERTS.certification.title}, ${EDUCATION_AND_CERTS.certification.issuer}`;
 
     navigator.clipboard.writeText(rawResume);
     setCopied(true);
@@ -136,7 +139,11 @@ ${EDUCATION_AND_CERTS.certification.title} — ${EDUCATION_AND_CERTS.certificati
               <span className="hidden sm:inline">·</span>
               <span className="whitespace-nowrap">{PERSONAL_INFO.email}</span>
               <span className="hidden sm:inline">·</span>
-              <span className="whitespace-nowrap">github.com/kovartravis/neuron</span>
+              <span className="whitespace-nowrap">github.com/kovartravis</span>
+              <span className="hidden sm:inline">·</span>
+              <span className="whitespace-nowrap">linkedin.com/in/travis-kovar-0a1929147</span>
+              <span className="hidden sm:inline">·</span>
+              <span className="whitespace-nowrap">x.com/kovartravis</span>
             </div>
           </div>
 
@@ -161,7 +168,7 @@ ${EDUCATION_AND_CERTS.certification.title} — ${EDUCATION_AND_CERTS.certificati
                   <div className="flex flex-col sm:flex-row sm:items-baseline justify-between text-xs sm:text-sm font-bold text-slate-900">
                     <div>
                       <span>{exp.role}</span>
-                      <span className="font-normal text-slate-600"> — {exp.company}</span>
+                      <span className="font-normal text-slate-600"> · {exp.company}</span>
                     </div>
                     <div className="text-slate-500 font-normal text-xs">
                       {exp.period}
@@ -187,20 +194,36 @@ ${EDUCATION_AND_CERTS.certification.title} — ${EDUCATION_AND_CERTS.certificati
             <h2 className="text-xs font-bold uppercase tracking-widest text-slate-900 border-b-2 border-slate-900 pb-1 mb-3">
               Projects
             </h2>
-            <div>
-              <div className="flex items-baseline justify-between text-xs sm:text-sm font-bold text-slate-900">
-                <div>
-                  <span>{NEURON_PROJECT.name}</span>
-                  <span className="font-normal text-slate-600"> — {NEURON_PROJECT.license}</span>
+            <div className="space-y-3">
+              <div>
+                <div className="flex items-baseline justify-between text-xs sm:text-sm font-bold text-slate-900">
+                  <div>
+                    <span>{NEURON_PROJECT.name}</span>
+                    <span className="font-normal text-slate-600"> · {NEURON_PROJECT.license}</span>
+                  </div>
+                  <div className="text-xs text-cyan-700 font-mono">
+                    github.com/kovartravis/neuron
+                  </div>
                 </div>
-                <div className="text-xs text-cyan-700 font-mono">
-                  github.com/kovartravis/neuron
-                </div>
+                <ul className="mt-1 space-y-1 text-xs text-slate-700 list-disc list-outside pl-4 leading-relaxed">
+                  <li>{NEURON_PROJECT.description}</li>
+                  <li>{NEURON_PROJECT.stats.releases}.</li>
+                </ul>
               </div>
-              <ul className="mt-1 space-y-1 text-xs text-slate-700 list-disc list-outside pl-4 leading-relaxed">
-                <li>{NEURON_PROJECT.description}</li>
-                <li>~1,600+ weekly npm downloads; actively maintained across 40+ published releases.</li>
-              </ul>
+              <div>
+                <div className="flex items-baseline justify-between text-xs sm:text-sm font-bold text-slate-900">
+                  <div>
+                    <span>Tripkit</span>
+                    <span className="font-normal text-slate-600"> · in progress</span>
+                  </div>
+                  <div className="text-xs text-cyan-700 font-mono">
+                    github.com/kovartravis/tripkit
+                  </div>
+                </div>
+                <ul className="mt-1 space-y-1 text-xs text-slate-700 list-disc list-outside pl-4 leading-relaxed">
+                  <li>Travel MCP for personal agents (trip ledger + tools).</li>
+                </ul>
+              </div>
             </div>
           </div>
 
@@ -221,10 +244,10 @@ ${EDUCATION_AND_CERTS.certification.title} — ${EDUCATION_AND_CERTS.certificati
             </h2>
             <div className="text-xs text-slate-800 space-y-1">
               <div>
-                <strong className="text-slate-900">{EDUCATION_AND_CERTS.education.degree}</strong> — {EDUCATION_AND_CERTS.education.institution}, {EDUCATION_AND_CERTS.education.period}
+                <strong className="text-slate-900">{EDUCATION_AND_CERTS.education.degree}</strong>, {EDUCATION_AND_CERTS.education.institution}, {EDUCATION_AND_CERTS.education.period}
               </div>
               <div>
-                <strong className="text-slate-900">{EDUCATION_AND_CERTS.certification.title}</strong> — {EDUCATION_AND_CERTS.certification.issuer}
+                <strong className="text-slate-900">{EDUCATION_AND_CERTS.certification.title}</strong>, {EDUCATION_AND_CERTS.certification.issuer}
               </div>
             </div>
           </div>

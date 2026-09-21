@@ -3,16 +3,16 @@ import { SKILL_CATEGORIES } from '../data/resumeData';
 
 export const SkillsMatrix: React.FC = () => {
   return (
-    <section id="skills" className="py-12 sm:py-16 border-t border-stone-200">
+    <section id="skills" className="py-10 sm:py-12 border-t border-stone-100">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight">
+        <h3 className="text-lg font-bold text-slate-800 tracking-tight">
           Skills
-        </h2>
+        </h3>
 
-        <div className="mt-8 space-y-6">
+        <div className="mt-6 space-y-5">
           {SKILL_CATEGORIES.map((cat) => (
             <div key={cat.category}>
-              <h3 className="text-sm font-bold text-slate-900">{cat.category}</h3>
+              <h4 className="text-sm font-semibold text-slate-800">{cat.category}</h4>
               <p className="text-xs text-slate-500 mt-0.5">{cat.description}</p>
               <div className="mt-2.5 flex flex-wrap gap-2">
                 {cat.skills.map((skill) => (

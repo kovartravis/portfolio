@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { FileText, Menu, X } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/resumeData';
+import { SocialLinks } from './SocialLinks';
 
 interface NavbarProps {
   onOpenResumeModal: () => void;
 }
 
 const NAV_LINKS = [
-  { name: 'Experience', href: '#experience' },
-  { name: 'Projects', href: '#neuron' },
-  { name: 'Skills', href: '#skills' },
+  { name: 'Work', href: '#work' },
+  { name: 'Point of View', href: '#point-of-view' },
   { name: 'Contact', href: '#contact' },
 ];
 
@@ -23,7 +23,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
           {PERSONAL_INFO.name}
         </a>
 
-        <nav className="hidden sm:flex items-center gap-6">
+        <nav className="hidden sm:flex items-center gap-5">
           {NAV_LINKS.map((link) => (
             <a
               key={link.name}
@@ -33,9 +33,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
               {link.name}
             </a>
           ))}
+          <SocialLinks className="flex items-center gap-2.5" iconClassName="w-3.5 h-3.5" />
           <button
             onClick={onOpenResumeModal}
-            className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-lg bg-slate-900 hover:bg-slate-800 text-white transition-colors cursor-pointer"
+            className="flex items-center gap-1.5 text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors cursor-pointer"
           >
             <FileText className="w-3.5 h-3.5" />
             <span>Resume</span>
@@ -63,12 +64,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
               {link.name}
             </a>
           ))}
+          <div className="px-2 py-2">
+            <SocialLinks showLabels className="flex flex-col gap-2" linkClassName="flex items-center gap-1.5 text-sm font-medium text-slate-700" />
+          </div>
           <button
             onClick={() => {
               setMobileMenuOpen(false);
               onOpenResumeModal();
             }}
-            className="flex items-center gap-1.5 px-2 py-2 text-sm font-medium text-slate-700"
+            className="flex items-center gap-1.5 px-2 py-2 text-sm font-medium text-slate-500"
           >
             <FileText className="w-3.5 h-3.5" />
             <span>Resume</span>

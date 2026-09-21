@@ -14,6 +14,25 @@ export interface ExperienceItem {
   }[];
 }
 
+export interface WorkLink {
+  label: string;
+  href: string;
+}
+
+export interface SelectedWorkItem {
+  id: string;
+  name: string;
+  tagline: string;
+  status?: string;
+  description?: string;
+  metrics?: string[];
+  points?: {
+    title: string;
+    description: string;
+  }[];
+  links?: WorkLink[];
+}
+
 export interface ProjectItem {
   name: string;
   tagline: string;
@@ -21,7 +40,7 @@ export interface ProjectItem {
   githubUrl: string;
   npmUrl?: string;
   stats: {
-    downloads: string;
+    downloads?: string;
     releases: string;
     license: string;
     status: string;
@@ -51,30 +70,34 @@ export interface SkillCategory {
 }
 
 export const PERSONAL_INFO = {
-  name: "TRAVIS KOVAR",
-  title: "Senior Software Engineer — AI Systems & Full-Stack",
-  headline: "I build and ship — from production AI agents and ML pipelines to full-stack platforms used by hundreds of people.",
+  name: "Travis Kovar",
+  title: "Production AI engineer. Full-stack when it matters.",
+  headline: "I build and ship production AI agents and ML pipelines to full-stack platforms used by hundreds of people.",
   location: "Cordova, TN",
   phone: "(512) 800-4209",
   email: "kovartravis@gmail.com",
   github: "https://github.com/kovartravis",
+  linkedin: "https://www.linkedin.com/in/travis-kovar-0a1929147/",
+  x: "https://x.com/kovartravis",
   neuronRepo: "https://github.com/kovartravis/neuron",
   availability: "Senior SWE · Targeting Staff / Lead Roles",
   summary:
-    "Software engineer who builds and ships — from production AI agents to full-stack platforms used by hundreds of people. I've built internal libraries and project templates that other engineering teams picked up on their own, and I informally lead a group of 8 engineers without needing a title to do it. I go looking for the problem worth solving rather than waiting to be assigned one, and I'd rather ship something real than write a plan about shipping it.",
+    "I build and ship production AI agents and the platforms around them. Informal tech lead for an 8-person team. I’d rather ship something real than write a plan about shipping it.",
 };
+
+export const POINT_OF_VIEW =
+  "I’m interested in the line where configuring a work agent stops being enough and you need a custom agent, and how that line keeps moving. Same for tools: MCP is useful when it carries identity, short-lived grants, and a clear split between read-auto and write-reviewed.";
 
 export const NEURON_PROJECT: ProjectItem = {
   name: "Neuron",
-  tagline: "Persistent Memory System for AI Coding Agents",
+  tagline: "local-first memory for coding agents (schema, git-diffable, harness hooks)",
   license: "MIT Licensed · Open Source",
   githubUrl: "https://github.com/kovartravis/neuron",
   npmUrl: "https://www.npmjs.com/package/@kovartravis/neuron",
   stats: {
-    downloads: "~1,600+ weekly downloads",
     releases: "40+ published releases",
     license: "MIT Open Source",
-    status: "Actively Maintained",
+    status: "Open source",
   },
   description:
     "A schema-enforced, git-diffable markdown memory layer for AI coding agents. Unlike opaque vector databases, Neuron keeps agent context transparent, human-auditable, and natively version-controlled alongside application code.",
@@ -93,11 +116,6 @@ export const NEURON_PROJECT: ProjectItem = {
       title: "Zero Opaque Vendor Lock-in",
       description:
         "All memories live in the repository tree, allowing code reviewers and CI systems to inspect agent learnings in standard pull requests.",
-    },
-    {
-      title: "High Performance & Battle-Tested",
-      description:
-        "Over 40 published releases with ~1,600+ weekly downloads on npm, trusted by engineers building autonomous and pair-programming agent workflows.",
     },
   ],
   supportedHarnesses: [
@@ -124,12 +142,44 @@ const enrichedContext = await harness.hydrate({
 console.log(\`[Neuron] Loaded \${enrichedContext.memories.length} schema-validated memories\`);`,
 };
 
+export const SELECTED_WORK: SelectedWorkItem[] = [
+  {
+    id: "neuron",
+    name: "Neuron",
+    tagline: "local-first memory for coding agents (schema, git-diffable, harness hooks)",
+    status: "Open source",
+    description: NEURON_PROJECT.description,
+    metrics: [NEURON_PROJECT.stats.releases, NEURON_PROJECT.license],
+    points: NEURON_PROJECT.architecturePoints,
+    links: [
+      { label: "GitHub", href: NEURON_PROJECT.githubUrl },
+      { label: "npm", href: NEURON_PROJECT.npmUrl! },
+    ],
+  },
+  {
+    id: "tripkit",
+    name: "Tripkit",
+    tagline: "travel MCP for personal agents (trip ledger + tools; in progress)",
+    status: "In progress",
+    description:
+      "A local-first trip ledger and tool surface for personal agents: flights, stays, days, people, plans, packing, transit, and ICS/markdown export.",
+    links: [
+      { label: "GitHub", href: "https://github.com/kovartravis/tripkit" },
+    ],
+  },
+  {
+    id: "production-agents",
+    name: "Production agents at work",
+    tagline: "Agents and internal platforms shipped without a formal ML team.",
+  },
+];
+
 export const EXPERIENCES: ExperienceItem[] = [
   {
     id: "st-jude",
     company: "ALSAC / St. Jude Children's Research Hospital",
     role: "Software Engineer",
-    period: "May 2021 – Present",
+    period: "May 2021 to Present",
     leadershipTag: "Informal Technical Lead for a group of 8 engineers",
     summary:
       "Leading technical architecture across AI initiatives, custom machine learning pipelines, and core enterprise platforms supporting the St. Jude fundraising and business development missions.",
@@ -175,7 +225,7 @@ export const EXPERIENCES: ExperienceItem[] = [
     id: "truckpro",
     company: "TruckPro",
     role: "Lead Developer",
-    period: "January 2019 – May 2021",
+    period: "January 2019 to May 2021",
     summary:
       "Owned customer-facing web applications end-to-end and initiated modernization of enterprise integration infrastructure.",
     highlights: [
@@ -199,7 +249,7 @@ export const EXPERIENCES: ExperienceItem[] = [
     id: "american-home-shield",
     company: "American Home Shield",
     role: "Software Engineer",
-    period: "January 2018 – December 2019",
+    period: "January 2018 to December 2019",
     summary:
       "Engineered high-converting sales funnels and modern cloud e-commerce services supporting post-launch commercial operations.",
     highlights: [
@@ -325,7 +375,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       {
         name: "Open Source Maintenance",
         level: "Expert",
-        context: "Published 40+ releases, ~1.6k+ weekly npm downloads on Neuron",
+        context: "Published 40+ releases of Neuron on npm",
       },
     ],
   },
@@ -335,7 +385,7 @@ export const EDUCATION_AND_CERTS = {
   education: {
     degree: "B.S. in Computer Science",
     institution: "Texas State University",
-    period: "2012 – 2017",
+    period: "2012 to 2017",
     highlights: ["Data Structures & Algorithms", "Systems Programming", "Distributed Computing"],
   },
   certification: {

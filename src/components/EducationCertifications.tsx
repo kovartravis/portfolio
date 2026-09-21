@@ -4,18 +4,18 @@ import { ExternalLink } from 'lucide-react';
 
 export const EducationCertifications: React.FC = () => {
   return (
-    <section id="credentials" className="py-12 sm:py-16 border-t border-stone-200">
+    <section id="credentials" className="py-10 sm:py-12 border-t border-stone-100">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight">
+        <h3 className="text-lg font-bold text-slate-800 tracking-tight">
           Education & Certifications
-        </h2>
+        </h3>
 
-        <div className="mt-8 space-y-6">
+        <div className="mt-6 space-y-5">
           <div>
             <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-              <h3 className="text-lg font-bold text-slate-950">
+              <h4 className="text-base font-semibold text-slate-900">
                 {EDUCATION_AND_CERTS.education.degree}
-              </h3>
+              </h4>
               <span className="text-sm text-slate-500">{EDUCATION_AND_CERTS.education.period}</span>
             </div>
             <p className="text-sm text-slate-600 mt-0.5">{EDUCATION_AND_CERTS.education.institution}</p>
@@ -26,9 +26,9 @@ export const EducationCertifications: React.FC = () => {
 
           <div>
             <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-              <h3 className="text-lg font-bold text-slate-950">
+              <h4 className="text-base font-semibold text-slate-900">
                 {EDUCATION_AND_CERTS.certification.title}
-              </h3>
+              </h4>
               <span className="text-sm text-slate-500">{EDUCATION_AND_CERTS.certification.status}</span>
             </div>
             <p className="text-sm text-slate-600 mt-0.5">{EDUCATION_AND_CERTS.certification.issuer}</p>
